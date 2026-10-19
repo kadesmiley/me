@@ -1,0 +1,11 @@
+# INCIDENTS AND OCCURRENCES — the timeline on the home page.
+#
+# One line = one dot.  Format:   YYYY-MM-DD | what happened
+# Put NEW entries at the TOP (right under these notes).
+# Lines starting with # (like these) don't show.
+#
+# Edit from your phone: github.com/kadesmiley/me -> tap timeline.txt
+# -> pencil icon -> add a line -> "Commit changes". Live in ~1 minute.
+
+2026-10-18 | Started building this website.
+2026-10-09 | Started writing in Obsidian.

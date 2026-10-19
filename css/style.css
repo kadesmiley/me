@@ -1,0 +1,309 @@
+/* ===================================================
+   style.css — the one stylesheet every page uses
+   =================================================== */
+
+/* ---------- COLORS ----------
+   Every color on the site is one of these variables. Change a value
+   here and it changes everywhere. Dark mode is the default; the
+   html[data-theme="light"] block below swaps in the light values. */
+:root {
+	/* sidebar — stays the same in both themes */
+	--sidebar-bg: #29274c;
+	--sidebar-text: #e8e7f7;
+	--sidebar-hover: rgba(255, 255, 255, 0.1);
+
+	/* the palette — box edges, timeline dots, etc. */
+	--accent: #29274c;        /* Space Indigo — main accent, same as the sidebar */
+	--accent-2: #7e52a0;      /* Deep Lilac */
+	--accent-3: #d295bf;      /* Lilac */
+	--accent-4: #e6bccd;      /* Pastel Petal */
+
+	/* dark theme (the default) */
+	--bg: #00161d;            /* page background — a darker Jet Black (palette's is #012a36) */
+	--surface: #022832;       /* boxes sit on this — a step lighter than --bg */
+	--text: #e6f0f2;
+	--text-muted: #9fbac1;    /* dates, captions, small print */
+	--border: #0a3a46;
+	--accent-text: #e6bccd;   /* links + headings: Pastel Petal (Space Indigo is too dark to read on --bg) */
+	--star: #d295bf;          /* book review stars: Lilac */
+}
+
+html[data-theme="light"] {
+	--bg: #f3f7f8;
+	--surface: #ffffff;
+	--text: #10232a;
+	--text-muted: #52666d;
+	--border: #d5e1e4;
+	--accent-text: #29274c;   /* the real accent works as text on a light background */
+	--star: #7e52a0;          /* Deep Lilac — Lilac is too pale on white */
+}
+
+/* ---------- BASICS ---------- */
+* { box-sizing: border-box; }
+
+body {
+	margin: 0;
+	display: flex;            /* sidebar on the left, page content on the right */
+	min-height: 100vh;
+	background: var(--bg);
+	color: var(--text);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+a { color: var(--accent-text); }
+
+h1, h2, h3 {
+	line-height: 1.3;
+	color: var(--accent-text);
+}
+
+h1 { font-size: 1.8em; margin: 0 0 0.6em 0; }
+h2 { font-size: 1.3em; margin: 1.6em 0 0.5em 0; }
+h3 { font-size: 1.1em; margin: 0 0 0.3em 0; }
+
+img { max-width: 100%; }
+
+/* ---------- SIDEBAR ---------- */
+.sidebar {
+	flex: 0 0 220px;          /* fixed 220px column */
+	position: sticky;         /* stays put while the page scrolls */
+	top: 0;
+	height: 100vh;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 1.2em;
+	padding: 2em 1.2em;
+	background: var(--sidebar-bg);
+	color: var(--sidebar-text);
+}
+
+.site-name {
+	font-size: 1.4em;
+	font-weight: bold;
+	color: inherit;
+	text-decoration: none;
+}
+
+.tagline {
+	margin: -0.8em 0 0 0;
+	font-size: 0.85em;
+	opacity: 0.8;
+}
+
+.sidebar ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sidebar nav a {
+	display: block;
+	padding: 0.4em 0.7em;
+	color: inherit;
+	text-decoration: none;
+}
+
+.sidebar nav a:hover { background: var(--sidebar-hover); }
+
+/* the page you're on */
+.sidebar nav a.active {
+	background: var(--sidebar-text);
+	color: var(--sidebar-bg);
+	font-weight: bold;
+}
+
+/* light/dark button — pushed to the bottom of the sidebar */
+.theme-toggle {
+	margin-top: auto;
+	align-self: flex-start;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	padding: 0.35em 0.9em;
+	border: 2px solid currentColor;
+	background: none;
+	color: inherit;
+	font: inherit;
+	font-size: 0.85em;
+	cursor: pointer;
+}
+
+.theme-toggle svg {
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
+
+/* ---------- PAGE CONTENT ---------- */
+main {
+	flex: 1;
+	min-width: 0;
+	max-width: 860px;
+	padding: 2.5em 3em;
+}
+
+.muted { color: var(--text-muted); }
+
+/* ---------- BIG FIRST WORD ----------
+   "Welcome" on the home page: title-sized, but on the same line as
+   the sentence that follows it. */
+.lead-word {
+	font-size: 1.8em;
+	font-weight: bold;
+	line-height: 1;
+	color: var(--accent-text);
+}
+
+/* ---------- BOX ----------
+   The main building block: a square-cornered panel with a colored
+   left edge. Used for the status box, reviews, essays, and projects.
+   Add a color class to change its edge: <div class="box c2"> */
+.box {
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-left: 6px solid var(--box-color, var(--accent-text));
+	padding: 1em 1.3em;
+	margin: 0 0 1.2em 0;
+}
+
+.box.c2 { --box-color: var(--accent-2); }
+.box.c3 { --box-color: var(--accent-3); }
+.box.c4 { --box-color: var(--accent-4); }
+
+.box > :last-child { margin-bottom: 0; }
+
+.box h2 { margin-top: 0; }
+
+/* small grey line under a title: date, author, etc. */
+.meta {
+	font-size: 0.85em;
+	color: var(--text-muted);
+	margin: 0 0 0.6em 0;
+}
+
+.stars { color: var(--star); letter-spacing: 0.1em; }
+
+/* ---------- TIMELINE ----------
+   "Incidents and Occurrences" on the home page. Each entry is a dot;
+   a vertical line runs from each dot down to the next one. Entries are
+   evenly spaced (the padding-bottom on each li sets the gap). */
+.timeline {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.timeline li {
+	position: relative;
+	padding: 0 0 1.8em 2em;   /* left room for the dot, bottom = gap to the next entry */
+}
+
+.timeline li:last-child { padding-bottom: 0; }
+
+/* the dot */
+.timeline li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.35em;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: var(--accent-3);
+	z-index: 1;
+}
+
+/* the line down to the next dot (the last entry has none) */
+.timeline li:not(:last-child)::after {
+	content: "";
+	position: absolute;
+	left: 5px;                /* centered under the 12px dot */
+	top: 0.35em;
+	bottom: -0.35em;
+	width: 2px;
+	background: var(--border);
+}
+
+.timeline-date {
+	display: block;
+	font-size: 0.8em;
+	color: var(--text-muted);
+}
+
+/* ---------- GALLERY ----------
+   Instagram-style: 3 square tiles per row, tiny gaps, no captions on the
+   grid. Clicking a photo opens it larger with its caption (gallery.js). */
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 4px;
+}
+
+.gallery figure { margin: 0; }
+
+.gallery a { display: block; }
+
+.gallery img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 1 / 1;      /* every tile square, whatever the photo's shape */
+	object-fit: cover;        /* crop to fill the square instead of squishing */
+}
+
+.gallery a:hover img { opacity: 0.85; }
+
+/* captions live in the HTML but only show in the popup */
+.gallery figcaption { display: none; }
+
+/* the popup — a <dialog> that gallery.js fills in */
+.lightbox {
+	max-width: min(90vw, 900px);
+	padding: 0;
+	border: none;
+	background: var(--surface);
+	color: var(--text);
+}
+
+.lightbox::backdrop { background: rgba(0, 0, 0, 0.8); }
+
+.lightbox img {
+	display: block;
+	max-width: 100%;
+	max-height: 75vh;
+	margin: 0 auto;
+}
+
+.lightbox p {
+	margin: 0;
+	padding: 0.8em 1.1em;
+	font-size: 0.9em;
+}
+
+/* ---------- PHONES ----------
+   Below 700px wide the sidebar becomes a bar across the top. */
+@media (max-width: 700px) {
+	body { flex-direction: column; }
+
+	.sidebar {
+		position: static;
+		height: auto;
+		flex: none;
+		padding: 1.2em;
+		gap: 0.8em;
+	}
+
+	.sidebar ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.3em;
+	}
+
+	.theme-toggle { margin-top: 0; }
+
+	main { padding: 1.5em 1.1em; }
+
+	.gallery { gap: 2px; }
+}

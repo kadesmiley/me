@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Kade Smiley</title>
+	<!-- re-apply a saved light/dark choice before the page draws -->
+	<script>try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}</script>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+	<!-- ===== SIDEBAR (same on every page — links start with ./ here, ../ in subfolders) ===== -->
+	<aside class="sidebar">
+		<a class="site-name" href="./">Kade Smiley</a>
+		<p class="tagline"></p>
+		<nav>
+			<ul>
+				<li><a href="./" class="active">Home</a></li>
+				<li><a href="gallery/">Gallery</a></li>
+				<li><a href="essays/">Essays</a></li>
+				<li><a href="reviews/">Book Reviews</a></li>
+				<li><a href="projects/">Projects</a></li>
+				<li><a href="elsewhere/">Find Me Elsewhere</a></li>
+			</ul>
+		</nav>
+		<button class="theme-toggle" type="button" aria-label="Switch light/dark mode"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg> light / dark</button>
+	</aside>
+
+	<!-- ===== PAGE CONTENT ===== -->
+	<main>
+		<!-- "Welcome" is title-sized but stays on the same line as the sentence -->
+		<p><span class="lead-word">Welcome</span> to my personal site. This is where I keep my photos, writing, and the books I've been reading, instead of spreading them across a dozen social media sites.</p>
+
+		<!-- the entries in this timeline come from timeline.txt — edit that file, not this one -->
+		<div class="box">
+			<h2>Incidents and Occurrences</h2>
+			<ul class="timeline" id="timeline">
+				<li>Loading…</li>
+			</ul>
+		</div>
+	</main>
+
+	<script src="js/theme.js"></script>
+	<script src="js/timeline.js"></script>
+</body>
+</html>
