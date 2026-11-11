@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Map — prototype</title>
+	<!--
+		MAP PROTOTYPE — lives entirely in this map/ folder and doesn't touch
+		the rest of the site. Delete the folder to remove it.
+
+		Leaflet (the pan/zoom map library) loads from a CDN — no install.
+		The islands themselves are defined in map.js.
+	-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+	<link rel="stylesheet" href="map.css" />
+</head>
+<body>
+
+	<!-- the map fills the whole screen -->
+	<div id="map"></div>
+
+	<!-- small corner panel: how to use it, plus a plain list of links for
+	     anyone who'd rather not explore (or uses a screen reader) -->
+	<div class="map-panel">
+		<p class="map-title">Welcome</p>
+		<p class="map-help">Drag to look around, scroll or pinch to zoom, click an island to visit.</p>
+		<details>
+			<summary>Rather have a list?</summary>
+			<ul>
+				<li><a href="../">Home</a></li>
+				<li><a href="../gallery/">Gallery</a></li>
+				<li><a href="../essays/">Essays</a></li>
+				<li><a href="../reviews/">The Library</a></li>
+				<li><a href="../projects/">Projects</a></li>
+				<li><a href="../elsewhere/">Find Me Elsewhere</a></li>
+			</ul>
+		</details>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+	<script src="map.js"></script>
+</body>
+</html>

@@ -24,7 +24,7 @@
 	--text: #e6f0f2;
 	--text-muted: #9fbac1;    /* dates, captions, small print */
 	--border: #0a3a46;
-	--accent-text: #e6bccd;   /* links + headings: Pastel Petal (Space Indigo is too dark to read on --bg) */
+	--accent-text: #e8e7f7;   /* links + headings: same pale lavender as the sidebar's text */
 	--star: #d295bf;          /* book review stars: Lilac */
 }
 
@@ -92,6 +92,8 @@ img { max-width: 100%; }
 	font-size: 0.85em;
 	opacity: 0.8;
 }
+
+.tagline:empty { display: none; } /* blank tagline = no gap left behind */
 
 .sidebar ul {
 	list-style: none;
@@ -164,7 +166,7 @@ main {
 .box {
 	background: var(--surface);
 	border: 1px solid var(--border);
-	border-left: 6px solid var(--box-color, var(--accent-text));
+	border-left: 6px solid var(--box-color, var(--accent-2));
 	padding: 1em 1.3em;
 	margin: 0 0 1.2em 0;
 }
@@ -224,7 +226,7 @@ main {
 	top: 0.35em;
 	bottom: -0.35em;
 	width: 2px;
-	background: var(--border);
+	background: var(--accent-2);
 }
 
 .timeline-date {
@@ -238,7 +240,7 @@ main {
    grid. Clicking a photo opens it larger with its caption (gallery.js). */
 .gallery {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 	gap: 4px;
 }
 

@@ -1,0 +1,96 @@
+/* Map prototype styles — only used by map/index.html.
+   Colors are copied from the site's palette (css/style.css) rather than
+   linked, so this prototype can't affect the real site. */
+:root {
+	--sea: #00161d;          /* darker Jet Black */
+	--sea-lines: #0a3a46;    /* faint chart grid on the water */
+	--land: #29274c;         /* Space Indigo */
+	--land-hover: #3b3870;
+	--shore: #7e52a0;        /* Deep Lilac */
+	--highlight: #d295bf;    /* Lilac */
+	--label: #e8e7f7;        /* sidebar text color */
+	--label-soft: #e6bccd;   /* Pastel Petal */
+}
+
+html, body {
+	margin: 0;
+	height: 100%;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#map {
+	position: fixed;
+	inset: 0;
+	background: var(--sea);  /* the ocean is just the map's background */
+	cursor: grab;
+}
+
+/* ---------- labels ---------- */
+/* Leaflet "tooltips" are used as always-visible labels; strip their
+   default white bubble so they read as text painted on the map. */
+.leaflet-tooltip.island-label,
+.leaflet-tooltip.detail-label {
+	background: none;
+	border: none;
+	box-shadow: none;
+	padding: 0;
+	color: var(--label);
+	font-family: inherit;
+	font-weight: bold;
+	text-shadow: 0 1px 3px #000, 0 0 8px #000;
+	pointer-events: none;   /* clicks go through to the island underneath */
+}
+
+.leaflet-tooltip.island-label { font-size: 15px; letter-spacing: 0.04em; }
+
+.leaflet-tooltip.detail-label {
+	font-size: 11px;
+	font-weight: normal;
+	color: var(--label-soft);
+}
+
+/* the little arrow Leaflet adds to tooltips */
+.leaflet-tooltip.island-label::before,
+.leaflet-tooltip.detail-label::before { display: none; }
+
+/* zoom-in details: hidden until map.js adds .zoomed to the map */
+#map:not(.zoomed) .detail,
+#map:not(.zoomed) .detail-label { display: none; }
+
+/* ---------- zoom buttons: square, in the palette ---------- */
+.leaflet-bar,
+.leaflet-bar a { border-radius: 0 !important; }
+
+.leaflet-bar { border: 2px solid var(--shore) !important; }
+
+.leaflet-bar a {
+	background: var(--land);
+	color: var(--label);
+	border-bottom-color: var(--shore);
+}
+
+.leaflet-bar a:hover { background: var(--land-hover); color: var(--label); }
+
+/* ---------- corner panel ---------- */
+.map-panel {
+	position: fixed;
+	top: 12px;
+	left: 56px;              /* clear of the zoom buttons */
+	z-index: 1000;           /* above the map */
+	max-width: 260px;
+	padding: 0.8em 1em;
+	background: var(--land);
+	border-left: 5px solid var(--shore);
+	color: var(--label);
+	font-size: 13px;
+}
+
+.map-title { margin: 0; font-size: 1.5em; font-weight: bold; }
+
+.map-help { margin: 0.4em 0; opacity: 0.85; }
+
+.map-panel summary { cursor: pointer; color: var(--label-soft); }
+
+.map-panel ul { margin: 0.5em 0 0 0; padding-left: 1.2em; }
+
+.map-panel a { color: var(--label-soft); }

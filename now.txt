@@ -1,0 +1,10 @@
+# WHAT I'M UP TO — shown in the box on the home page.
+#
+# One line = one bullet. "Label: text" bolds the label.
+# Lines starting with # (like these) are notes to yourself and don't show.
+#
+# Edit from your phone: github.com/kadesmiley/me -> tap now.txt
+# -> pencil icon -> change the lines -> "Commit changes". Live in ~1 minute.
+
+Updated: October 18, 2026
+
