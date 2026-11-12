@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Movie &amp; Show Reviews — Kade Smiley</title>
+	<script>try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}</script>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+	<!-- ===== SIDEBAR (same on every page — only the ../ prefixes and which link is "active" change) =====
+	     Each <details> is a dropdown group. Add "open" to the group the page is in so it starts opened. -->
+	<aside class="sidebar">
+		<a class="site-name" href="../../">Kade Smiley</a>
+		<p class="tagline"></p>
+		<nav>
+			<ul>
+				<li><a href="../../">Home</a></li>
+				<li><details>
+					<summary>Coffee Table</summary>
+					<ul>
+						<li><a href="../../coffee-table/photo-album/">Photo Album</a></li>
+						<li><a href="../../coffee-table/life-journal/">Life Journal</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Bookshelf</summary>
+					<ul>
+						<li><a href="../../bookshelf/book-reviews/">Book Reviews</a></li>
+						<li><a href="../../bookshelf/to-read/">To-Read Pile</a></li>
+					</ul>
+				</details></li>
+				<li><details open>
+					<summary>Entertainment Center</summary>
+					<ul>
+						<li><a href="../../entertainment-center/reviews/" class="active">Movie &amp; Show Reviews</a></li>
+						<li><a href="../../entertainment-center/to-watch/">To-Watch List</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Crafts Table</summary>
+					<ul>
+						<li><a href="../../crafts-table/notebook/">Notebook</a></li>
+						<li><a href="../../crafts-table/projects/">Projects</a></li>
+					</ul>
+				</details></li>
+				<li><a href="../../elsewhere/">Find Me Elsewhere</a></li>
+			</ul>
+		</nav>
+		<button class="theme-toggle" type="button" aria-label="Switch light/dark mode"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg> light / dark</button>
+	</aside>
+
+	<!-- ===== PAGE CONTENT ===== -->
+	<main>
+		<h1>Movie &amp; Show Reviews</h1>
+		<p class="muted">What I've been watching and what I thought.</p>
+
+		<!--
+			TO ADD A REVIEW:
+			Copy the <div class="box c4"> block below, newest at the top,
+			and fill it in. Put "Movie" or "Show" in the meta line.
+			Stars: ★ is a full star, ☆ an empty one — ★★★★☆ is 4 out of 5.
+		-->
+
+		<div class="box c4">
+			<h3>Title</h3>
+			<p class="meta">Movie · <span class="stars">★★★★☆</span> · watched November 2026</p>
+			<p>Your thoughts. (Placeholder — replace with a real review.)</p>
+		</div>
+	</main>
+
+	<script src="../../js/theme.js"></script>
+</body>
+</html>

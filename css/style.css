@@ -110,6 +110,38 @@ img { max-width: 100%; }
 
 .sidebar nav a:hover { background: var(--sidebar-hover); }
 
+/* ---------- DROPDOWN GROUPS ----------
+   Each group (Coffee Table, Bookshelf, ...) is a <details>: click its
+   <summary> to open or close the list of pages inside. No JS needed. */
+.sidebar summary {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	padding: 0.4em 0.7em;
+	cursor: pointer;
+	list-style: none;         /* hide the browser's own triangle... */
+}
+
+.sidebar summary::-webkit-details-marker { display: none; } /* ...in Safari too */
+
+.sidebar summary:hover { background: var(--sidebar-hover); }
+
+/* our own arrow: points right when closed, down when open */
+.sidebar summary::before {
+	content: "▸";
+	font-size: 0.8em;
+	transition: transform 0.15s ease;
+}
+
+.sidebar details[open] > summary::before { transform: rotate(90deg); }
+
+/* the pages inside a group: indented, slightly smaller */
+.sidebar details ul {
+	margin: 0.1em 0 0.4em 1.1em;
+	border-left: 1px solid var(--sidebar-hover);
+	font-size: 0.92em;
+}
+
 /* the page you're on */
 .sidebar nav a.active {
 	background: var(--sidebar-text);
@@ -297,11 +329,15 @@ main {
 		gap: 0.8em;
 	}
 
-	.sidebar ul {
+	/* top-level links and groups wrap in a row... */
+	.sidebar nav > ul {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.3em;
 	}
+
+	/* ...and an opened group takes a full row so its pages fit under it */
+	.sidebar nav > ul > li:has(details[open]) { flex-basis: 100%; }
 
 	.theme-toggle { margin-top: 0; }
 

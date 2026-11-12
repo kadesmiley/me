@@ -17,31 +17,39 @@ Plain hand-written HTML + one CSS file + three tiny JS files. No build step, no 
 ## Paths: always relative
 
 This is a GitHub **project** site, served under `/me/`, not at the domain root. A root-absolute path like `/css/style.css` would resolve to `kadesmiley.github.io/css/style.css` — the *portfolio* site — and break. So every link/src is relative:
-- `index.html` (root): `css/style.css`, `gallery/`, `./`
-- pages in subfolders: `../css/style.css`, `../gallery/`, `../`
+- `index.html` (root): `css/style.css`, `bookshelf/to-read/`, `./`
+- one folder deep (`elsewhere/`): `../css/style.css`, `../`
+- two folders deep (every room page, e.g. `bookshelf/to-read/`): `../../css/style.css`, `../../coffee-table/photo-album/`, `../../`
 
 (The portfolio repo uses root-absolute paths; don't copy that convention here.)
 
 ## Structure
 
+The site is organized like rooms of a house: each sidebar group is a piece of furniture, and each page under it is its own folder.
+
 ```
-index.html            Home: "Welcome" intro + the timeline (timeline.txt)
-timeline.txt          "Incidents and Occurrences" entries — edited from phone via github.com
-gallery/index.html    Instagram-style square grid; click a photo for a popup with caption
-gallery/photos/       Photos (~1600px long edge, JPEG)
-essays/index.html     List of essays; each links to a PDF saved in essays/
-reviews/index.html    "The Library" tab — book reviews, one box each (folder kept as reviews/)
-projects/index.html   Projects, one box each
-elsewhere/index.html  "Find Me Elsewhere" — links to other profiles (portfolio, eBird, Instagram)
-css/style.css         The only stylesheet
-js/theme.js           Light/dark toggle
-js/timeline.js        Loads timeline.txt into the home page timeline
-js/gallery.js         The click-to-enlarge popup
+index.html                              Home: "Welcome" intro + the timeline (timeline.txt)
+timeline.txt                            "Incidents and Occurrences" entries — edited from phone via github.com
+coffee-table/photo-album/index.html     Photo Album (was gallery/): square grid, click a photo for a popup with caption
+coffee-table/photo-album/photos/        Photos (~1600px long edge, JPEG)
+coffee-table/life-journal/index.html    Life Journal: dated entries, one box each
+bookshelf/book-reviews/index.html       Book Reviews (was reviews/ "The Library"), one box each
+bookshelf/to-read/index.html            To-Read Pile: a simple list
+entertainment-center/reviews/index.html Movie & Show Reviews, one box each
+entertainment-center/to-watch/index.html To-Watch List: a simple list
+crafts-table/notebook/index.html        Notebook (was essays/): essays/notes, each links to a PDF saved in that folder
+crafts-table/projects/index.html        Projects (crochet, Arduino, anything), one box each
+elsewhere/index.html                    "Find Me Elsewhere" — links to other profiles (portfolio, eBird, Instagram)
+map/                                    Old, unlinked map page — not in the nav
+css/style.css                           The only stylesheet
+js/theme.js                             Light/dark toggle
+js/timeline.js                          Loads timeline.txt into the home page timeline
+js/gallery.js                           The photo album's click-to-enlarge popup
 ```
 
-Every page is one folder + `index.html` so URLs are clean (`/me/gallery/`).
+Every page is one folder + `index.html` so URLs are clean (`/me/bookshelf/to-read/`).
 
-**Sidebar:** each page repeats the same `<aside class="sidebar">` markup (only the `./` vs `../` prefixes and which link has `class="active"` differ). Adding/renaming a tab = edit the sidebar in all six pages.
+**Sidebar:** each page repeats the same `<aside class="sidebar">` markup (only the `./` / `../` / `../../` prefixes, which link has `class="active"`, and which group has `open` differ). Groups are `<details><summary>` dropdowns — no JS. The group containing the current page gets the `open` attribute so it starts expanded. Adding/renaming a page = edit the sidebar in all ten pages.
 
 ## Theme
 
@@ -66,4 +74,4 @@ Each page's `<main>` has an HTML comment explaining how to add an entry (photo/e
 
 ## Mobile
 
-One breakpoint, `@media (max-width: 700px)` at the bottom of `style.css`: the sidebar stops being a sticky column and becomes a block across the top with the nav links wrapping in a row.
+One breakpoint, `@media (max-width: 700px)` at the bottom of `style.css`: the sidebar stops being a sticky column and becomes a block across the top with the top-level links/groups wrapping in a row; an opened group takes a full row (`li:has(details[open])`) so its pages list underneath.

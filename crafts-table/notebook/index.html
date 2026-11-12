@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Notebook — Kade Smiley</title>
+	<script>try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}</script>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+	<!-- ===== SIDEBAR (same on every page — only the ../ prefixes and which link is "active" change) =====
+	     Each <details> is a dropdown group. Add "open" to the group the page is in so it starts opened. -->
+	<aside class="sidebar">
+		<a class="site-name" href="../../">Kade Smiley</a>
+		<p class="tagline"></p>
+		<nav>
+			<ul>
+				<li><a href="../../">Home</a></li>
+				<li><details>
+					<summary>Coffee Table</summary>
+					<ul>
+						<li><a href="../../coffee-table/photo-album/">Photo Album</a></li>
+						<li><a href="../../coffee-table/life-journal/">Life Journal</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Bookshelf</summary>
+					<ul>
+						<li><a href="../../bookshelf/book-reviews/">Book Reviews</a></li>
+						<li><a href="../../bookshelf/to-read/">To-Read Pile</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Entertainment Center</summary>
+					<ul>
+						<li><a href="../../entertainment-center/reviews/">Movie &amp; Show Reviews</a></li>
+						<li><a href="../../entertainment-center/to-watch/">To-Watch List</a></li>
+					</ul>
+				</details></li>
+				<li><details open>
+					<summary>Crafts Table</summary>
+					<ul>
+						<li><a href="../../crafts-table/notebook/" class="active">Notebook</a></li>
+						<li><a href="../../crafts-table/projects/">Projects</a></li>
+					</ul>
+				</details></li>
+				<li><a href="../../elsewhere/">Find Me Elsewhere</a></li>
+			</ul>
+		</nav>
+		<button class="theme-toggle" type="button" aria-label="Switch light/dark mode"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg> light / dark</button>
+	</aside>
+
+	<!-- ===== PAGE CONTENT ===== -->
+	<main>
+		<h1>Notebook</h1>
+		<p class="muted">Personal writing. Each one opens as a PDF.</p>
+
+		<!--
+			TO ADD AN ESSAY / NOTE:
+			1. Export it from Obsidian as a PDF and save it into this
+			   notebook/ folder (simple file name, e.g. my-essay.pdf).
+			2. Copy the <div class="box"> block below, newest at the top,
+			   and change the link, title, date, and description.
+			   Try class="box c2" / "box c3" / "box c4" for color.
+		-->
+
+		<div class="box">
+			<h3><a href="example-essay.pdf" target="_blank" rel="noopener">Example essay title</a></h3>
+			<p class="meta">October 18, 2026 · PDF</p>
+			<p>A sentence or two about what the essay is about. (Placeholder: the link won't work until a real PDF is saved here.)</p>
+		</div>
+	</main>
+
+	<script src="../../js/theme.js"></script>
+</body>
+</html>

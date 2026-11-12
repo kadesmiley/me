@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Life Journal — Kade Smiley</title>
+	<script>try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}</script>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+	<!-- ===== SIDEBAR (same on every page — only the ../ prefixes and which link is "active" change) =====
+	     Each <details> is a dropdown group. Add "open" to the group the page is in so it starts opened. -->
+	<aside class="sidebar">
+		<a class="site-name" href="../../">Kade Smiley</a>
+		<p class="tagline"></p>
+		<nav>
+			<ul>
+				<li><a href="../../">Home</a></li>
+				<li><details open>
+					<summary>Coffee Table</summary>
+					<ul>
+						<li><a href="../../coffee-table/photo-album/">Photo Album</a></li>
+						<li><a href="../../coffee-table/life-journal/" class="active">Life Journal</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Bookshelf</summary>
+					<ul>
+						<li><a href="../../bookshelf/book-reviews/">Book Reviews</a></li>
+						<li><a href="../../bookshelf/to-read/">To-Read Pile</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Entertainment Center</summary>
+					<ul>
+						<li><a href="../../entertainment-center/reviews/">Movie &amp; Show Reviews</a></li>
+						<li><a href="../../entertainment-center/to-watch/">To-Watch List</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Crafts Table</summary>
+					<ul>
+						<li><a href="../../crafts-table/notebook/">Notebook</a></li>
+						<li><a href="../../crafts-table/projects/">Projects</a></li>
+					</ul>
+				</details></li>
+				<li><a href="../../elsewhere/">Find Me Elsewhere</a></li>
+			</ul>
+		</nav>
+		<button class="theme-toggle" type="button" aria-label="Switch light/dark mode"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg> light / dark</button>
+	</aside>
+
+	<!-- ===== PAGE CONTENT ===== -->
+	<main>
+		<h1>Life Journal</h1>
+		<p class="muted">Notes on days worth remembering.</p>
+
+		<!--
+			TO ADD AN ENTRY:
+			Copy the <div class="box c4"> block below, newest at the top,
+			and change the date and text. A long entry can have more <p>s.
+		-->
+
+		<div class="box c4">
+			<h3>Entry title</h3>
+			<p class="meta">November 11, 2026</p>
+			<p>What happened, and what I thought about it. (Placeholder — replace with a real entry.)</p>
+		</div>
+	</main>
+
+	<script src="../../js/theme.js"></script>
+</body>
+</html>

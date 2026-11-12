@@ -3,24 +3,49 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Gallery — Kade Smiley</title>
+	<title>Photo Album — Kade Smiley</title>
 	<script>try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}</script>
-	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../../css/style.css" />
 </head>
 <body>
 
-	<!-- ===== SIDEBAR ===== -->
+	<!-- ===== SIDEBAR (same on every page — only the ../ prefixes and which link is "active" change) =====
+	     Each <details> is a dropdown group. Add "open" to the group the page is in so it starts opened. -->
 	<aside class="sidebar">
-		<a class="site-name" href="../">Kade Smiley</a>
+		<a class="site-name" href="../../">Kade Smiley</a>
 		<p class="tagline"></p>
 		<nav>
 			<ul>
-				<li><a href="../">Home</a></li>
-				<li><a href="../gallery/" class="active">Gallery</a></li>
-				<li><a href="../essays/">Essays</a></li>
-				<li><a href="../reviews/">The Library</a></li>
-				<li><a href="../projects/">Projects</a></li>
-				<li><a href="../elsewhere/">Find Me Elsewhere</a></li>
+				<li><a href="../../">Home</a></li>
+				<li><details open>
+					<summary>Coffee Table</summary>
+					<ul>
+						<li><a href="../../coffee-table/photo-album/" class="active">Photo Album</a></li>
+						<li><a href="../../coffee-table/life-journal/">Life Journal</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Bookshelf</summary>
+					<ul>
+						<li><a href="../../bookshelf/book-reviews/">Book Reviews</a></li>
+						<li><a href="../../bookshelf/to-read/">To-Read Pile</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Entertainment Center</summary>
+					<ul>
+						<li><a href="../../entertainment-center/reviews/">Movie &amp; Show Reviews</a></li>
+						<li><a href="../../entertainment-center/to-watch/">To-Watch List</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Crafts Table</summary>
+					<ul>
+						<li><a href="../../crafts-table/notebook/">Notebook</a></li>
+						<li><a href="../../crafts-table/projects/">Projects</a></li>
+					</ul>
+				</details></li>
+				<li><a href="../../elsewhere/">Find Me Elsewhere</a></li>
 			</ul>
 		</nav>
 		<button class="theme-toggle" type="button" aria-label="Switch light/dark mode"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg> light / dark</button>
@@ -28,12 +53,12 @@
 
 	<!-- ===== PAGE CONTENT ===== -->
 	<main>
-		<h1>Gallery</h1>
+		<h1>Photo Album</h1>
 		<p class="muted">Photos I've taken and like. Click one to see it bigger.</p>
 
 		<!--
 			TO ADD A PHOTO:
-			1. Put the image in gallery/photos/ (resize big camera files to
+			1. Put the image in coffee-table/photo-album/photos/ (resize big camera files to
 			   ~1600px wide first so the page loads fast).
 			2. Copy one <figure> block below, paste it at the TOP of the
 			   gallery (newest first), and change:
@@ -71,7 +96,7 @@
 		</div>
 	</main>
 
-	<script src="../js/theme.js"></script>
-	<script src="../js/gallery.js"></script>
+	<script src="../../js/theme.js"></script>
+	<script src="../../js/gallery.js"></script>
 </body>
 </html>

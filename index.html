@@ -10,17 +10,42 @@
 </head>
 <body>
 
-	<!-- ===== SIDEBAR (same on every page — links start with ./ here, ../ in subfolders) ===== -->
+	<!-- ===== SIDEBAR (same on every page — only the ../ prefixes and which link is "active" change) =====
+	     Each <details> is a dropdown group. Add "open" to the group the page is in so it starts opened. -->
 	<aside class="sidebar">
 		<a class="site-name" href="./">Kade Smiley</a>
 		<p class="tagline"></p>
 		<nav>
 			<ul>
 				<li><a href="./" class="active">Home</a></li>
-				<li><a href="gallery/">Gallery</a></li>
-				<li><a href="essays/">Essays</a></li>
-				<li><a href="reviews/">The Library</a></li>
-				<li><a href="projects/">Projects</a></li>
+				<li><details>
+					<summary>Coffee Table</summary>
+					<ul>
+						<li><a href="coffee-table/photo-album/">Photo Album</a></li>
+						<li><a href="coffee-table/life-journal/">Life Journal</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Bookshelf</summary>
+					<ul>
+						<li><a href="bookshelf/book-reviews/">Book Reviews</a></li>
+						<li><a href="bookshelf/to-read/">To-Read Pile</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Entertainment Center</summary>
+					<ul>
+						<li><a href="entertainment-center/reviews/">Movie &amp; Show Reviews</a></li>
+						<li><a href="entertainment-center/to-watch/">To-Watch List</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Crafts Table</summary>
+					<ul>
+						<li><a href="crafts-table/notebook/">Notebook</a></li>
+						<li><a href="crafts-table/projects/">Projects</a></li>
+					</ul>
+				</details></li>
 				<li><a href="elsewhere/">Find Me Elsewhere</a></li>
 			</ul>
 		</nav>
