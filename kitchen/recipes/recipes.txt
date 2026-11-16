@@ -1,0 +1,44 @@
+# ============================================================
+#  RECIPES — the Recipes page reads this file.
+#
+#  TO ADD A RECIPE: copy the template below, paste it at the very
+#  BOTTOM of this file, remove the # at the start of each line, and
+#  fill it in. Put a line with just --- between recipes.
+#  The newest recipe (the bottom one) shows first on the site.
+#
+#  Title:        the recipe's name
+#  Serves:       how many people (optional)
+#  Time:         how long it takes (optional)
+#  Ingredients:  then one ingredient per line underneath
+#  Steps:        then one step per line underneath (they get numbered
+#                automatically — no need to type 1. 2. 3.)
+#  Notes:        anything else: where it's from, what you'd change.
+#                Optional. A blank line starts a new paragraph.
+#
+#  Lines starting with # are notes like this one — the site ignores them.
+#
+#  ---- TEMPLATE (copy from here) ----
+#  ---
+#  Title:
+#  Serves:
+#  Time:
+#  Ingredients:
+#  first ingredient
+#  second ingredient
+#  Steps:
+#  first step
+#  second step
+#  Notes:
+# ============================================================
+
+---
+Title: Recipe Name
+Serves: 2
+Time: 30 minutes
+Ingredients:
+Something
+Something else
+Steps:
+Do this first.
+Then this.
+Notes: Where it came from, what I'd change. (Placeholder — replace or delete this one.)

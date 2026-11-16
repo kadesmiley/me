@@ -69,32 +69,20 @@
 		<a class="back-link" href="../../living-room/" onclick="if (document.referrer.indexOf(location.host) !== -1) { history.back(); return false; }">← Back</a>
 
 		<h1>Recipes</h1>
-		<p class="muted">Things I cook, and how.</p>
+		<p class="muted">Recipes I cook on the regular.</p>
 
 		<!--
-			TO ADD A RECIPE:
-			Copy the <div class="box c2"> block below, newest at the top, and
-			fill it in. Ingredients go in the <ul> (one <li> each), steps in
-			the <ol> (numbered automatically).
+			THE RECIPES COME FROM recipes.txt (in this same folder) — don't
+			write them here. Open recipes.txt in any text editor, copy the
+			template at the top to the bottom of the file, fill it in, save.
+			js/recipes.js turns each one into a box below.
 		-->
-
-		<div class="box c2">
-			<h3>Recipe Name</h3>
-			<p class="meta">Serves 2 · 30 minutes</p>
-			<h4>Ingredients</h4>
-			<ul>
-				<li>Something</li>
-				<li>Something else</li>
-			</ul>
-			<h4>Steps</h4>
-			<ol>
-				<li>Do this first.</li>
-				<li>Then this.</li>
-			</ol>
-			<p>Notes, where it came from, what I'd change. (Placeholder — replace with a real recipe.)</p>
+		<div class="recipe-list" data-file="recipes.txt">
+			<p class="muted">Loading…</p>
 		</div>
 	</main>
 
 	<script src="../../js/theme.js"></script>
+	<script src="../../js/recipes.js"></script>
 </body>
 </html>
