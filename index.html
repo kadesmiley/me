@@ -8,35 +8,34 @@
 	<script>try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}</script>
 	<link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="fullscreen">
 
-	<!-- ===== SIDEBAR (same on every page — only the ../ prefixes and which link is "active" change) =====
-	     Each <details> is a dropdown group. Add "open" to the group the page is in so it starts opened. -->
-	<aside class="sidebar">
-		<a class="site-name" href="./">Kade Smiley</a>
+	<!-- ☰ Menu button (full-screen pages only). js/menu.js opens/closes the sidebar. -->
+	<button class="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false">☰ Menu</button>
+
+	<!-- ===== SIDEBAR (same on every page — only the ../ prefixes, which link is "active", and which group is "open" change) =====
+	     Each <details> is a dropdown group. Add "open" to the group the page is in so it starts opened.
+	     "Digital Cabin" at the top goes outside (the home page); "Inside" goes to the living room. -->
+	<aside class="sidebar" id="sidebar">
+		<a class="site-name" href="./">Digital Cabin</a>
 		<p class="tagline"></p>
 		<nav>
 			<ul>
-				<li><a href="./" class="active">Home</a></li>
+				<li><a href="living-room/">Inside</a></li>
 				<li><details>
 					<summary>Coffee Table</summary>
 					<ul>
 						<li><a href="coffee-table/photo-album/">Photo Album</a></li>
-						<li><a href="coffee-table/life-journal/">Life Journal</a></li>
+						<li><a href="coffee-table/life-logbook/">Life Logbook</a></li>
 					</ul>
 				</details></li>
 				<li><details>
-					<summary>Bookshelf</summary>
+					<summary>Media Corner</summary>
 					<ul>
-						<li><a href="bookshelf/book-reviews/">Book Reviews</a></li>
-						<li><a href="bookshelf/to-read/">To-Read Pile</a></li>
-					</ul>
-				</details></li>
-				<li><details>
-					<summary>Entertainment Center</summary>
-					<ul>
-						<li><a href="entertainment-center/reviews/">Movie &amp; Show Reviews</a></li>
-						<li><a href="entertainment-center/to-watch/">To-Watch List</a></li>
+						<li><a href="media-corner/books/">Book Reviews</a></li>
+						<li><a href="media-corner/movies-tv/">Movie &amp; TV Reviews</a></li>
+						<li><a href="media-corner/to-read/">To-Read Pile</a></li>
+						<li><a href="media-corner/to-watch/">To-Watch List</a></li>
 					</ul>
 				</details></li>
 				<li><details>
@@ -46,27 +45,46 @@
 						<li><a href="crafts-table/projects/">Projects</a></li>
 					</ul>
 				</details></li>
+				<li><details>
+					<summary>Kitchen</summary>
+					<ul>
+						<li><a href="kitchen/recipes/">Recipes</a></li>
+					</ul>
+				</details></li>
 				<li><a href="elsewhere/">Find Me Elsewhere</a></li>
 			</ul>
 		</nav>
 		<button class="theme-toggle" type="button" aria-label="Switch light/dark mode"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg> light / dark</button>
 	</aside>
+	<!-- runs right after the sidebar so it's hidden before the page draws -->
+	<script src="js/menu.js"></script>
 
-	<!-- ===== PAGE CONTENT ===== -->
-	<main>
-		<!-- "Welcome" is title-sized but stays on the same line as the sentence -->
-		<p><span class="lead-word">Welcome</span> to my personal site. This is where I keep my photos, writing, and the books I've been reading, instead of spreading them across a dozen social media sites.</p>
-
-		<!-- the entries in this timeline come from timeline.txt — edit that file, not this one -->
-		<div class="box">
-			<h2>Incidents and Occurrences</h2>
-			<ul class="timeline" id="timeline">
-				<li>Loading…</li>
-			</ul>
+	<!-- ===== THE CABIN — fills the whole screen ===== -->
+	<!--
+		THE CABIN + ITS FRONT DOOR
+		- The sky matches the visitor's clock. images/scenes/outside/ has a
+		  Minecraft screenshot for each time listed in data-times below, named
+		  by time (18-30.webp = 6:30 PM). When the page loads, js/daylight.js
+		  shows the latest one that's already happened today.
+		  The 12-00.webp in src is only what shows if JavaScript is off.
+		- The door is a "highlight" hotspot: no label, just a see-through white
+		  glow over the exact door when you point at it. Its --shape is the
+		  door's outline: corners as "across% down%" of the whole picture,
+		  going around the edge. The lower-left corner is cut out because the
+		  bench's armrest covers it. To trace a new outline, open this page
+		  with ?edit on the end of the address and click each corner.
+	-->
+	<div class="hero">
+		<div class="scene">
+			<img src="images/scenes/outside/12-00.webp" data-daylight="images/scenes/outside/" data-times="00-00 04-30 05-00 05-30 06-00 06-30 07-00 09-00 12-00 15-00 17-00 17-30 18-00 18-30 19-00 19-30 20-00 21-00" alt="The cabin from outside, at the same time of day as it is for you" />
+			<a class="hotspot highlight" href="living-room/" data-label="Welcome" aria-label="Welcome — go inside" style="--shape: polygon(37.71% 51.88%, 38.80% 51.94%, 38.80% 56.94%, 37.89% 56.90%, 37.89% 54.17%, 37.71% 54.17%);"></a>
 		</div>
-	</main>
+	</div>
+	<!-- runs right away (not at the bottom) so the noon picture doesn't flash first -->
+	<script src="js/daylight.js"></script>
 
 	<script src="js/theme.js"></script>
-	<script src="js/timeline.js"></script>
+	<script src="js/nametags.js"></script>
+	<script src="js/scene.js"></script>
 </body>
 </html>

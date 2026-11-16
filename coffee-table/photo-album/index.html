@@ -7,35 +7,38 @@
 	<script>try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}</script>
 	<link rel="stylesheet" href="../../css/style.css" />
 </head>
-<body>
+<body class="has-backdrop">
 
-	<!-- ===== SIDEBAR (same on every page — only the ../ prefixes and which link is "active" change) =====
-	     Each <details> is a dropdown group. Add "open" to the group the page is in so it starts opened. -->
-	<aside class="sidebar">
-		<a class="site-name" href="../../">Kade Smiley</a>
+	<!-- the in-game view of this spot, filling the screen behind the page (darkened).
+	     To change it, replace images/pages/photo-album.webp. -->
+	<img class="page-backdrop" src="../../images/pages/photo-album.webp" alt="" />
+
+	<!-- ✕ Close / ☰ Menu button: the sidebar starts open here; js/menu.js hides/shows it. -->
+	<button class="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="true">✕ Close</button>
+
+	<!-- ===== SIDEBAR (same on every page — only the ../ prefixes, which link is "active", and which group is "open" change) =====
+	     Each <details> is a dropdown group. Add "open" to the group the page is in so it starts opened.
+	     "Digital Cabin" at the top goes outside (the home page); "Inside" goes to the living room. -->
+	<aside class="sidebar" id="sidebar">
+		<a class="site-name" href="../../">Digital Cabin</a>
 		<p class="tagline"></p>
 		<nav>
 			<ul>
-				<li><a href="../../">Home</a></li>
+				<li><a href="../../living-room/">Inside</a></li>
 				<li><details open>
 					<summary>Coffee Table</summary>
 					<ul>
 						<li><a href="../../coffee-table/photo-album/" class="active">Photo Album</a></li>
-						<li><a href="../../coffee-table/life-journal/">Life Journal</a></li>
+						<li><a href="../../coffee-table/life-logbook/">Life Logbook</a></li>
 					</ul>
 				</details></li>
 				<li><details>
-					<summary>Bookshelf</summary>
+					<summary>Media Corner</summary>
 					<ul>
-						<li><a href="../../bookshelf/book-reviews/">Book Reviews</a></li>
-						<li><a href="../../bookshelf/to-read/">To-Read Pile</a></li>
-					</ul>
-				</details></li>
-				<li><details>
-					<summary>Entertainment Center</summary>
-					<ul>
-						<li><a href="../../entertainment-center/reviews/">Movie &amp; Show Reviews</a></li>
-						<li><a href="../../entertainment-center/to-watch/">To-Watch List</a></li>
+						<li><a href="../../media-corner/books/">Book Reviews</a></li>
+						<li><a href="../../media-corner/movies-tv/">Movie &amp; TV Reviews</a></li>
+						<li><a href="../../media-corner/to-read/">To-Read Pile</a></li>
+						<li><a href="../../media-corner/to-watch/">To-Watch List</a></li>
 					</ul>
 				</details></li>
 				<li><details>
@@ -45,14 +48,26 @@
 						<li><a href="../../crafts-table/projects/">Projects</a></li>
 					</ul>
 				</details></li>
+				<li><details>
+					<summary>Kitchen</summary>
+					<ul>
+						<li><a href="../../kitchen/recipes/">Recipes</a></li>
+					</ul>
+				</details></li>
 				<li><a href="../../elsewhere/">Find Me Elsewhere</a></li>
 			</ul>
 		</nav>
 		<button class="theme-toggle" type="button" aria-label="Switch light/dark mode"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg> light / dark</button>
 	</aside>
+	<!-- runs right after the sidebar so it's set up before the page draws -->
+	<script src="../../js/menu.js"></script>
 
 	<!-- ===== PAGE CONTENT ===== -->
 	<main>
+		<!-- ← Back: goes to the page you were just on. If you came from outside
+		     the site, it goes to href instead. -->
+		<a class="back-link" href="../../living-room/" onclick="if (document.referrer.indexOf(location.host) !== -1) { history.back(); return false; }">← Back</a>
+
 		<h1>Photo Album</h1>
 		<p class="muted">Photos I've taken and like. Click one to see it bigger.</p>
 

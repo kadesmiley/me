@@ -1,0 +1,42 @@
+# ============================================================
+#  MOVIE & TV REVIEWS — the Movie & TV Reviews page reads this file.
+#
+#  TO ADD A REVIEW: copy the template below, paste it at the very
+#  BOTTOM of this file, remove the # at the start of each line, and
+#  fill it in. Put a line with just --- between reviews.
+#  The newest review (the bottom one) shows first on the site.
+#
+#  Title:          the movie or show's name
+#  Type:           Movie or Show
+#  Season:         (shows only — leave the line out for movies)
+#  Date watched:   written however you like (e.g. November 2026)
+#  Stars:          a number from 0 to 5
+#  Review:         your thoughts. It can go on for as many lines as
+#                  you want. A blank line starts a new paragraph.
+#
+#  Lines starting with # are notes like this one — the site ignores them.
+#
+#  ---- TEMPLATE (copy from here) ----
+#  ---
+#  Title:
+#  Type:
+#  Season:
+#  Date watched:
+#  Stars:
+#  Review:
+# ============================================================
+
+---
+Title: Movie Title
+Type: Movie
+Date watched: November 2026
+Stars: 4
+Review: Your thoughts. (Placeholder — replace or delete this one.)
+
+---
+Title: Show Title
+Type: Show
+Season: 1
+Date watched: November 2026
+Stars: 3
+Review: Your thoughts. (Placeholder — replace or delete this one.)

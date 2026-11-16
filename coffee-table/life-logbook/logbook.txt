@@ -1,0 +1,17 @@
+# ============================================================
+#  LIFE LOGBOOK — the Life Logbook page reads this file.
+#
+#  One event per line:     YYYY-MM-DD | what happened
+#  e.g.                    2026-11-15 | Finished building the cabin.
+#
+#  Add new events at the BOTTOM. The page shows the newest first,
+#  as dots on a line.
+#
+#  Lines starting with # are notes like this one — the site ignores them.
+#
+#  Edit from your phone: github.com -> this repo -> open this file ->
+#  pencil icon -> add a line -> "Commit changes". Live in ~1 minute.
+# ============================================================
+
+2026-10-09 | Started writing in Obsidian.
+2026-10-18 | Started building this website.

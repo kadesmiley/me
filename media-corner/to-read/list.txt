@@ -1,0 +1,15 @@
+# ============================================================
+#  TO-READ PILE — the To-Read Pile page reads this file.
+#
+#  One book per line:     Title | Author
+#  (the "| Author" part is optional)
+#
+#  Add new books at the BOTTOM. They show in the same order as here,
+#  so the top of the file is the top of the pile.
+#  When you finish one, delete its line and write it up in
+#  media-corner/books/reviews.txt.
+#
+#  Lines starting with # are notes like this one — the site ignores them.
+# ============================================================
+
+The Arrogant Ape: And A New Way To See Humanity | Christine Webb

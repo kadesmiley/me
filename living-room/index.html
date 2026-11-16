@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Living Room — Kade Smiley</title>
+	<script>try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}</script>
+	<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="fullscreen">
+
+	<!-- ☰ Menu button (full-screen pages only). js/menu.js opens/closes the sidebar. -->
+	<button class="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false">☰ Menu</button>
+
+	<!-- ← Back, top-right: goes to the page you were just on. If you came from
+	     outside the site, it goes to href (outside the cabin) instead. -->
+	<a class="overlay-back" href="../" onclick="if (document.referrer.indexOf(location.host) !== -1) { history.back(); return false; }">← Back</a>
+
+	<!-- ===== SIDEBAR (same on every page — only the ../ prefixes, which link is "active", and which group is "open" change) =====
+	     Each <details> is a dropdown group. Add "open" to the group the page is in so it starts opened.
+	     "Digital Cabin" at the top goes outside (the home page); "Inside" goes to the living room. -->
+	<aside class="sidebar" id="sidebar">
+		<a class="site-name" href="../">Digital Cabin</a>
+		<p class="tagline"></p>
+		<nav>
+			<ul>
+				<li><a href="../living-room/" class="active">Inside</a></li>
+				<li><details>
+					<summary>Coffee Table</summary>
+					<ul>
+						<li><a href="../coffee-table/photo-album/">Photo Album</a></li>
+						<li><a href="../coffee-table/life-logbook/">Life Logbook</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Media Corner</summary>
+					<ul>
+						<li><a href="../media-corner/books/">Book Reviews</a></li>
+						<li><a href="../media-corner/movies-tv/">Movie &amp; TV Reviews</a></li>
+						<li><a href="../media-corner/to-read/">To-Read Pile</a></li>
+						<li><a href="../media-corner/to-watch/">To-Watch List</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Crafts Table</summary>
+					<ul>
+						<li><a href="../crafts-table/notebook/">Notebook</a></li>
+						<li><a href="../crafts-table/projects/">Projects</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Kitchen</summary>
+					<ul>
+						<li><a href="../kitchen/recipes/">Recipes</a></li>
+					</ul>
+				</details></li>
+				<li><a href="../elsewhere/">Find Me Elsewhere</a></li>
+			</ul>
+		</nav>
+		<button class="theme-toggle" type="button" aria-label="Switch light/dark mode"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg> light / dark</button>
+	</aside>
+	<!-- runs right after the sidebar so it's hidden before the page draws -->
+	<script src="../js/menu.js"></script>
+
+	<!-- ===== THE LIVING ROOM — fills the whole screen ===== -->
+	<!--
+		THE PICTURE + ITS CLICKABLE SPOTS
+		- The picture is images/scenes/living-room.webp. To swap it, replace
+		  that file (same name) or change the src below.
+		- Each <a class="hotspot highlight"> is one clickable thing. It has no
+		  visible text; it lights up see-through white when you point at it.
+		- Its --shape is the thing's outline: a list of corners, each one
+		  "across% down%" of the whole picture, going around the edge.
+		- To trace a new outline: open this page with ?edit on the end of the
+		  address, click each corner in order, and copy the --shape line it
+		  gives you. Esc starts over.
+		- data-label is the floating name tag shown above it (in the Minecraft-
+		  style font). It's placed automatically at the top-middle of the
+		  outline by js/nametags.js. aria-label is what screen readers say.
+	-->
+	<div class="hero">
+		<div class="scene">
+			<img src="../images/scenes/living-room.webp" alt="Inside the cabin: a kitchen on the left, a coffee table in the middle, a desk and crafting table at the back, a stove on the left, and bookshelves on the right" />
+
+			<!-- Coffee Table -->
+			<a class="hotspot highlight" href="../coffee-table/photo-album/" data-label="Photo Album" aria-label="Photo Album (the red book)" style="--shape: polygon(41.48% 67.72%, 41.19% 68.11%, 40.67% 67.32%, 40.30% 67.72%, 39.85% 67.06%, 39.48% 67.32%, 39.11% 66.67%, 38.96% 66.67%, 38.67% 67.06%, 38.00% 65.88%, 38.00% 65.22%, 38.15% 65.22%, 38.15% 64.56%, 38.30% 64.43%, 38.30% 63.90%, 38.44% 63.77%, 38.44% 63.24%, 38.59% 63.24%, 38.59% 62.58%, 38.74% 62.58%, 38.74% 61.92%, 40.22% 60.48%, 40.37% 60.48%, 40.67% 61.00%, 41.04% 60.74%, 41.41% 61.40%, 41.70% 61.13%, 41.78% 61.13%, 42.15% 61.53%, 42.22% 61.53%, 42.52% 61.40%, 42.96% 61.92%, 43.26% 61.66%, 44.00% 62.58%, 44.00% 63.11%, 43.93% 63.77%, 43.85% 63.90%, 43.85% 64.43%, 43.78% 64.56%, 43.78% 65.22%, 43.70% 65.22%, 43.63% 65.88%, 43.63% 66.53%, 43.33% 66.93%, 43.04% 66.53%, 43.04% 66.67%, 42.59% 67.06%, 42.67% 67.19%, 42.59% 67.72%, 42.00% 68.51%);"></a>
+			<a class="hotspot highlight" href="../coffee-table/life-logbook/" data-label="Life Logbook" aria-label="Life Logbook (the brown book)" style="--shape: polygon(51.63% 56.39%, 51.63% 57.05%, 50.96% 57.84%, 50.89% 57.84%, 50.67% 57.58%, 50.44% 57.84%, 50.22% 57.58%, 49.93% 57.84%, 49.70% 57.58%, 49.48% 57.84%, 49.26% 57.58%, 48.96% 57.84%, 48.74% 57.58%, 48.52% 57.84%, 48.44% 57.84%, 47.33% 56.53%, 47.33% 56.00%, 47.56% 55.74%, 47.56% 55.21%, 47.85% 55.08%, 47.85% 54.55%, 48.00% 54.42%, 48.07% 54.29%, 48.07% 53.89%, 48.22% 53.76%, 48.37% 53.63%, 48.37% 53.23%, 49.04% 52.57%, 49.11% 52.57%, 49.26% 52.71%, 49.41% 52.57%, 49.56% 52.57%, 49.70% 52.71%, 49.85% 52.57%, 50.00% 52.44%, 50.15% 52.71%, 50.30% 52.57%, 50.44% 52.57%, 50.59% 52.71%, 50.74% 52.57%, 50.96% 52.57%, 51.04% 52.71%, 51.19% 52.44%, 51.33% 52.44%, 51.48% 52.71%, 51.48% 53.10%, 51.63% 53.23%, 51.78% 53.36%, 51.93% 53.23%, 52.07% 53.23%, 52.22% 53.36%, 52.37% 53.50%, 52.44% 54.15%, 52.30% 54.29%, 52.30% 54.81%, 52.07% 54.94%, 52.07% 55.47%, 51.85% 55.74%, 51.85% 56.26%, 51.63% 56.39%, 51.63% 57.05%, 50.89% 57.84%);"></a>
+
+			<!-- Crafts Table -->
+			<a class="hotspot highlight" href="../crafts-table/notebook/" data-label="Notebook" aria-label="Notebook (the book on the desk)" style="--shape: polygon(45.63% 38.22%, 44.07% 38.22%, 43.85% 38.35%, 43.85% 38.62%, 43.63% 38.62%, 43.63% 38.75%, 43.11% 38.75%, 43.04% 38.88%, 43.04% 39.54%, 43.04% 39.54%, 42.96% 39.54%, 42.96% 39.93%, 44.00% 40.72%, 44.67% 40.72%, 45.41% 40.59%, 45.41% 40.46%, 45.63% 40.46%, 45.70% 40.33%, 46.15% 40.20%, 46.67% 40.06%, 46.67% 38.88%);"></a>
+			<a class="hotspot highlight" href="../crafts-table/projects/" data-label="Projects" aria-label="Projects (the crafting table)" style="--shape: polygon(50.81% 50.07%, 50.00% 49.28%, 49.85% 49.28%, 49.04% 50.07%, 45.78% 47.04%, 45.78% 45.46%, 49.93% 42.30%, 49.93% 40.06%, 45.48% 36.90%, 49.93% 34.27%, 54.44% 36.90%, 54.15% 46.91%);"></a>
+
+			<!-- Media Corner -->
+			<a class="hotspot highlight" href="../media-corner/reviews/" data-label="Reviews" aria-label="Reviews (the book on the reading table)" style="--shape: polygon(76.59% 53.76%, 76.81% 53.89%, 76.81% 54.29%, 76.96% 54.29%, 76.96% 54.42%, 77.11% 54.42%, 77.11% 54.81%, 77.33% 54.81%, 77.33% 55.21%, 77.56% 55.47%, 77.70% 55.47%, 77.70% 55.74%, 77.93% 56.00%, 77.85% 56.26%, 79.04% 56.92%, 79.19% 56.66%, 79.41% 56.92%, 79.85% 57.18%, 79.85% 57.58%, 80.30% 57.71%, 80.44% 57.18%, 80.81% 57.45%, 80.89% 57.18%, 81.63% 57.71%, 81.70% 57.71%, 81.78% 57.45%, 82.59% 57.97%, 82.67% 57.97%, 82.89% 57.18%, 83.11% 56.26%, 83.11% 56.13%, 82.89% 56.00%, 82.81% 55.87%, 82.81% 55.60%, 82.67% 55.60%, 82.59% 55.47%, 82.44% 55.47%, 82.44% 55.08%, 82.30% 55.08%, 82.15% 54.94%, 82.15% 54.68%, 82.07% 54.68%, 82.07% 54.55%, 81.93% 54.55%, 81.78% 54.15%, 81.48% 54.02%, 81.48% 53.76%, 81.48% 53.76%, 79.04% 52.18%, 78.44% 52.18%, 78.30% 52.57%, 78.00% 52.44%, 77.85% 52.57%, 77.26% 52.18%, 77.11% 52.31%, 76.67% 53.36%);"></a>
+			<!-- not linked right now — the tall bookshelf, kept in case it gets a page:
+			     style="--shape: polygon(68.74% 29.92%, 64.37% 33.48%, 61.33% 61.66%, 67.11% 67.06%, 67.41% 65.22%, 70.00% 60.08%, 72.59% 62.19%, 73.19% 59.95%, 71.56% 58.63%, 72.15% 55.87%, 75.48% 49.15%, 78.81% 33.61%);" -->
+			<a class="hotspot highlight" href="../media-corner/to-read/" data-label="To-Read Pile" aria-label="To-Read Pile (the low shelf)" style="--shape: polygon(62.67% 49.28%, 61.41% 61.53%, 57.26% 57.71%, 57.33% 56.00%, 55.11% 54.02%, 55.56% 44.15%, 59.93% 40.06%, 60.07% 40.20%, 63.41% 42.17%);"></a>
+			<a class="hotspot highlight" href="../media-corner/to-watch/" data-label="To-Watch List" aria-label="To-Watch List (the wall shelf behind the reading table)" style="--shape: polygon(92.59% 38.48%, 86.74% 55.87%, 75.48% 49.15%, 78.81% 33.61%, 81.78% 34.66%, 81.19% 37.17%, 86.96% 39.41%, 87.70% 36.77%);"></a>
+			<!-- not linked right now — the dresser, kept in case it gets a page:
+			     style="--shape: polygon(67.45% 65.05%, 69.92% 61.34%, 83.98% 70.83%, 76.95% 92.82%, 65.10% 79.40%);" -->
+
+			<!-- Kitchen -->
+			<a class="hotspot highlight" href="../kitchen/recipes/" data-label="Recipes" aria-label="Recipes (the stove)" style="--shape: polygon(32.74% 41.78%, 33.19% 42.30%, 33.70% 42.04%, 33.85% 42.04%, 37.93% 46.78%, 38.74% 55.08%, 38.52% 55.21%, 38.96% 59.29%, 32.37% 65.22%, 32.37% 65.48%, 32.96% 69.04%, 32.96% 69.17%, 31.11% 71.01%, 30.37% 69.30%, 29.11% 63.11%, 27.85% 64.16%, 27.78% 64.16%, 25.85% 55.21%, 22.67% 48.36%, 23.93% 47.57%, 23.78% 47.04%, 23.78% 46.52%);--shape: polygon(32.74% 41.78%, 33.26% 42.30%, 33.70% 42.04%, 33.85% 42.04%, 37.93% 46.78%, 38.81% 55.08%, 38.52% 55.21%, 38.52% 54.81%, 38.44% 54.81%, 38.37% 53.76%, 38.30% 52.84%, 38.07% 50.47%, 37.19% 49.28%, 37.11% 49.28%, 27.78% 56.00%, 27.70% 56.13%, 29.11% 63.11%, 27.85% 64.16%, 26.15% 56.53%, 23.04% 50.07%, 22.67% 48.36%, 23.93% 47.57%, 23.78% 46.78%, 23.78% 46.65%);"></a>
+		</div>
+	</div>
+
+	<script src="../js/theme.js"></script>
+	<script src="../js/nametags.js"></script>
+	<script src="../js/scene.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# ============================================================
+#  TO-WATCH LIST — the To-Watch List page reads this file.
+#
+#  One per line:     Title | Movie      or      Title | Show
+#  (the "| Movie" part is optional)
+#
+#  Add new ones at the BOTTOM. They show in the same order as here.
+#  When you watch one, delete its line and write it up in
+#  media-corner/movies-tv/reviews.txt.
+#
+#  Lines starting with # are notes like this one — the site ignores them.
+# ============================================================
+
+Movie Title | Movie
+Show Title | Show

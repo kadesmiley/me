@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Reviews — Kade Smiley</title>
+	<script>try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}</script>
+	<link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body class="fullscreen">
+
+	<!-- ☰ Menu button (full-screen pages only). js/menu.js opens/closes the sidebar. -->
+	<button class="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false">☰ Menu</button>
+
+	<!-- ← Back, top-right: goes to the page you were just on. If you came from
+	     outside the site, it goes to href (the living room) instead. -->
+	<a class="overlay-back" href="../../living-room/" onclick="if (document.referrer.indexOf(location.host) !== -1) { history.back(); return false; }">← Back</a>
+
+	<!-- ===== SIDEBAR (same on every page — only the ../ prefixes, which link is "active", and which group is "open" change) =====
+	     Each <details> is a dropdown group. Add "open" to the group the page is in so it starts opened.
+	     "Digital Cabin" at the top goes outside (the home page); "Inside" goes to the living room. -->
+	<aside class="sidebar" id="sidebar">
+		<a class="site-name" href="../../">Digital Cabin</a>
+		<p class="tagline"></p>
+		<nav>
+			<ul>
+				<li><a href="../../living-room/">Inside</a></li>
+				<li><details>
+					<summary>Coffee Table</summary>
+					<ul>
+						<li><a href="../../coffee-table/photo-album/">Photo Album</a></li>
+						<li><a href="../../coffee-table/life-logbook/">Life Logbook</a></li>
+					</ul>
+				</details></li>
+				<li><details open>
+					<summary>Media Corner</summary>
+					<ul>
+						<li><a href="../../media-corner/books/">Book Reviews</a></li>
+						<li><a href="../../media-corner/movies-tv/">Movie &amp; TV Reviews</a></li>
+						<li><a href="../../media-corner/to-read/">To-Read Pile</a></li>
+						<li><a href="../../media-corner/to-watch/">To-Watch List</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Crafts Table</summary>
+					<ul>
+						<li><a href="../../crafts-table/notebook/">Notebook</a></li>
+						<li><a href="../../crafts-table/projects/">Projects</a></li>
+					</ul>
+				</details></li>
+				<li><details>
+					<summary>Kitchen</summary>
+					<ul>
+						<li><a href="../../kitchen/recipes/">Recipes</a></li>
+					</ul>
+				</details></li>
+				<li><a href="../../elsewhere/">Find Me Elsewhere</a></li>
+			</ul>
+		</nav>
+		<button class="theme-toggle" type="button" aria-label="Switch light/dark mode"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg> light / dark</button>
+	</aside>
+	<!-- runs right after the sidebar so it's hidden before the page draws -->
+	<script src="../../js/menu.js"></script>
+
+	<!-- ===== THE OPEN BOOK =====
+	     Like opening a book in Minecraft: the view of the reading table stays
+	     behind, darkened, and the book sits in the middle of the screen.
+	     The book picture is images/book-and-quill.png (background removed). -->
+	<div class="hero" aria-hidden="true">
+		<div class="scene">
+			<img src="../../images/pages/reviews.webp" alt="" />
+		</div>
+	</div>
+	<div class="gui-dim"></div>
+
+	<main class="book-view">
+		<h1 class="visually-hidden">Reviews</h1>
+
+		<!-- To add another kind of review, make its page and copy one <li> line. -->
+		<div class="mc-book">
+			<p class="mc-book-title">Reviews</p>
+			<ul class="mc-book-links">
+				<li><a href="../books/">Books</a></li>
+				<li><a href="../movies-tv/">Movies &amp; TV</a></li>
+			</ul>
+		</div>
+	</main>
+
+	<script src="../../js/theme.js"></script>
+</body>
+</html>
