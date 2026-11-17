@@ -11,6 +11,7 @@
 // lines. Everything after "Review:" (including later lines) is the
 // review itself; a blank line starts a new paragraph. The newest review
 // is the one at the BOTTOM of the file, and it shows first.
+// If js/search.js is loaded first, a search box + Sort dropdown is added.
 (function () {
 	document.querySelectorAll(".review-list").forEach(function (list) {
 		var kind = list.getAttribute("data-kind");
@@ -34,7 +35,11 @@
 					list.innerHTML = '<p class="muted">No reviews yet.</p>';
 					return;
 				}
+				reviews.forEach(function (r, i) { r.order = i; }); // 0 = top of the file
 				reviews.reverse().forEach(function (r) { list.appendChild(makeBox(r)); });
+
+				// the search box + Sort dropdown (js/search.js)
+				if (window.addSearch) addSearch(list, ["newest", "highest", "lowest", "az"]);
 			})
 			.catch(function () {
 				list.innerHTML = '<p class="muted">Couldn\'t load the reviews. (Opening the file directly? Use Live Server.)</p>';
@@ -57,15 +62,39 @@
 			return r;
 		}
 
-		// ★★★★☆ from a number (0-5)
+		// ★★★★☆ from a number (0-5). Decimals work too: 4.5 fills half of
+		// the fifth star, 4.25 a quarter of it, and so on. Each star is an
+		// empty ☆ with a filled ★ laid on top, cut to the right width.
 		function stars(value) {
-			var n = Math.max(0, Math.min(5, Math.round(parseFloat(value) || 0)));
-			return "★★★★★".slice(0, n) + "☆☆☆☆☆".slice(0, 5 - n);
+			var n = Math.max(0, Math.min(5, parseFloat(value) || 0));
+			var s = document.createElement("span");
+			s.className = "stars";
+			s.setAttribute("role", "img");
+			s.setAttribute("aria-label", n + " out of 5 stars");
+			for (var i = 0; i < 5; i++) {
+				var star = document.createElement("span");
+				star.className = "star";
+				star.textContent = "☆";
+				var fill = Math.max(0, Math.min(1, n - i)); // 0 = empty, 1 = full
+				if (fill > 0) {
+					var full = document.createElement("span");
+					full.className = "star-fill";
+					full.textContent = "★";
+					full.style.width = (fill * 100) + "%";
+					star.appendChild(full);
+				}
+				s.appendChild(star);
+			}
+			return s;
 		}
 
 		function makeBox(r) {
 			var box = document.createElement("div");
 			box.className = kind === "book" ? "box c4" : "box c3";
+			// for js/search.js: place in the file, rating, and title to sort by
+			box.dataset.order = r.order;
+			box.dataset.stars = r.stars || "";
+			box.dataset.title = r.title;
 
 			var h = document.createElement("h3");
 			h.textContent = r.title;
@@ -82,10 +111,7 @@
 				if (r.season) bits.push("season " + r.season);
 			}
 			bits.forEach(function (b) { meta.appendChild(document.createTextNode(b + " · ")); });
-			var s = document.createElement("span");
-			s.className = "stars";
-			s.textContent = stars(r.stars);
-			meta.appendChild(s);
+			meta.appendChild(stars(r.stars));
 			var when = kind === "book" ? r["date finished"] : r["date watched"];
 			if (when) meta.appendChild(document.createTextNode(" · " + (kind === "book" ? "finished " : "watched ") + when));
 			box.appendChild(meta);

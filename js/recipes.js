@@ -11,6 +11,7 @@
 //   Ingredients:               then one ingredient per line
 //   Steps:                     then one step per line (numbered for you)
 //   Notes:                     then any text (blank line = new paragraph)
+// If js/search.js is loaded first, a search box + Sort dropdown is added.
 // The newest recipe is the one at the BOTTOM of the file; it shows first.
 (function () {
 	var list = document.querySelector(".recipe-list");
@@ -35,7 +36,11 @@
 				list.innerHTML = '<p class="muted">No recipes yet.</p>';
 				return;
 			}
+			recipes.forEach(function (r, i) { r.order = i; }); // 0 = top of the file
 			recipes.reverse().forEach(function (r) { list.appendChild(makeBox(r)); });
+
+			// the search box + Sort dropdown (js/search.js)
+			if (window.addSearch) addSearch(list, ["newest", "az"]);
 		})
 		.catch(function () {
 			list.innerHTML = '<p class="muted">Couldn\'t load the recipes. (Opening the file directly? Use Live Server.)</p>';
@@ -83,6 +88,9 @@
 	function makeBox(r) {
 		var box = document.createElement("div");
 		box.className = "box c2";
+		// for js/search.js: place in the file and title to sort by
+		box.dataset.order = r.order;
+		box.dataset.title = r.title;
 		add(box, "h3", r.title);
 
 		var meta = [];

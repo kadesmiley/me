@@ -13,5 +13,5 @@
 #  pencil icon -> add a line -> "Commit changes". Live in ~1 minute.
 # ============================================================
 
-2026-10-09 | Started writing in Obsidian.
-2026-10-18 | Started building this website.
+2026-10-18 | Started building this website
+2026-10-23 | Started working Reception at an exotic vet clinic

@@ -10,7 +10,7 @@
 #  Type:           Movie or Show
 #  Season:         (shows only — leave the line out for movies)
 #  Date watched:   written however you like (e.g. November 2026)
-#  Stars:          a number from 0 to 5
+#  Stars:          a number from 0 to 5 — decimals are fine (4.5, 4.25)
 #  Review:         your thoughts. It can go on for as many lines as
 #                  you want. A blank line starts a new paragraph.
 #

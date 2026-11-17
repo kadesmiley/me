@@ -247,7 +247,11 @@ main {
 	margin: 0 0 0.6em 0;
 }
 
-.stars { color: var(--star); letter-spacing: 0.1em; }
+.stars { color: var(--star); }
+/* one star: an empty ☆, with a filled ★ on top cut to a width
+   (js/reviews.js sets that width, so 4.5 stars = half a fifth star) */
+.star { position: relative; display: inline-block; margin-right: 0.1em; }
+.star-fill { position: absolute; left: 0; top: 0; overflow: hidden; white-space: nowrap; }
 
 /* ---------- TIMELINE ----------
    "Incidents and Occurrences" on the home page. Each entry is a dot;
@@ -763,6 +767,51 @@ main {
 
 /* keep the page's ← Back clear of the button in the corner */
 .has-backdrop main { padding-top: 4.5em; }
+
+/* ---------- SEARCH BAR ----------
+   The search box + "Sort:" dropdown above reviews, recipes, and the
+   To-Read / To-Watch lists. js/search.js makes it. */
+.search-bar {
+	display: flex;
+	flex-wrap: wrap;          /* drops onto two lines on narrow screens */
+	align-items: center;
+	gap: 0.6em 1em;
+	margin: 0 0 1.2em 0;
+}
+
+/* dark and see-through like the sidebar, so it stays in the background */
+.search-bar input,
+.search-bar select {
+	font: inherit;
+	padding: 0.4em 0.6em;
+	background: var(--overlay-panel);
+	color: var(--overlay-text);
+	border: none;
+}
+
+.search-bar input { flex: 1 1 14em; min-width: 0; }
+
+.search-bar input::placeholder { color: var(--overlay-text); opacity: 0.6; }
+
+/* the opened dropdown list can't be see-through, so it uses the box colors */
+.search-bar option { background: var(--surface); color: var(--text); }
+
+/* a thin white line while you're typing in it (so keyboard users can find it) */
+.search-bar input:focus,
+.search-bar select:focus { outline: 1px solid var(--overlay-text); outline-offset: 0; }
+
+.search-bar .search-count { font-size: 0.85em; }
+
+/* "Sort:" and "Showing 3 of 12" sit right on the picture, like the intro line */
+.has-backdrop .search-bar label,
+.has-backdrop .search-bar .search-count,
+.has-backdrop main > .search-none {
+	color: var(--overlay-text);
+	text-shadow: 0 0 4px var(--overlay-shadow), 0 1px 2px var(--overlay-shadow);
+}
+
+/* things the search hides — beats .box's own display */
+[hidden] { display: none !important; }
 
 /* ---------- PHONES ----------
    Below 700px wide the sidebar becomes a bar across the top. */

@@ -23,10 +23,171 @@
 #  Stars:
 #  Review:
 # ============================================================
-
 ---
-Title: Book Title
-Author: Author Name
-Date finished: October 2026
+Title: Sun Tzu: The Art of War
+Author: Sun Tzu
+Date finished: June 20th, 2022
+Stars: 2.75
+Review: I was excited to see what the hype was about. I was quicky and constantly reminded that The Art of War was a book written for ancient chinese nobles who knew nothing of combat. "do not be in a bad position" "be unpredicatble" :| THis is only inspiring for buisnessmen becuase they have not conserdered the idea of thinking.
+---
+Title: Meditations
+Author: Marcus Aurelius
+Date finished: November 8th, 2022
+Stars: 3
+Review: Cool, chill, good read. I guess I can see how this has been coopted by dude bros. I think that fundamentals of Stocism are useful to think about in every day life still though. 
+---
+Title: Being Mortal
+Author: Atul Gawande
+Date finished: January 8th, 2023
+Stars: 4.75
+Review:The best book I have read to date. As someone who is just starting college and hoping to pursuing medicine it made me think as a person who will eventually die, and as a future physician (hopefully). I will recommend this to everyone I know, and reread again when I get the time. 
+---
+Title: All About Love: New Visions
+Author: bell hooks
+Date finished: March 30th, 2023
+Stars: 3.25
+Review: A pretty good read overall (2026: I adore bell's defenition of love, and still think about it, and follow it to this day). I understand the purpose and how spirituality plays I to love for many people, however the overemphasis on spirituality felt alienating.
+---
+Title: The Anthropocene Reviewed
+Author: John Green 
+Date finished: April 6th, 2023
+Stars: 5
+Review: This book is quintessentially human. I love it now and I am sure I will in the far future. (2026: still thinking about it)
+---
+Title: Why Fish Don't Exist: A Story of Loss, Love, and the Hidden Order of Life
+Author: Lulu Miller
+Date finished: April 15th, 2023
+Stars: 3
+Review: Very insightful and as John Green says, “completely un-sum-up-able”. It will either make you question your views on order or reinvigorate that love for everything alive. I will say I was rather annoyed at points with her self wallowing at her decision to cheat, like you did it girl, that’s on you.
+---
+Title: Tao Te Ching
+Author: Lao Tzu
+Date finished: May 2nd, 2023
+Stars: 3
+Review: A great introduction to Taoist philosophy. While I might disagree with many ideas, the concept of “the way” or “the Tao” has always been interesting.
+---
+Title: The Stranger
+Author: Albert Camus
+Date finished: May 17th, 2023
+Stars: 4.5
+Review: Absurdity in physical form vs. man’s attempt at order.
+---
+Title: Improbable Destinies: Fate, Chance, and the Future of Evolution
+Author: Jonathan B. Losos 
+Date finished: July 23rd, 2023
 Stars: 4
-Review: Your thoughts on the book. (Placeholder — replace or delete this one.)
+Review: A good read for anyone interested in evolutionary biology at all. It was really fun to read until I got to the micro-biology sections. They felt very repetitive and drawn out to me.
+---
+Title: To 'joy My Freedom: Southern Black Women's Lives and Labors After the Civil War
+Author: Tera W. Hunter
+Date finished: October 27th, 2023
+Stars: 4.25
+Review: I learned something new on every page, and on ever page I am reminded that I was raised as a white guy in washington state. I know nothing bro. 
+---
+Title: Malcolm X: The Last Speeches
+Author: Malcolm X
+Date finished: December 1st, 2023
+Stars: 4.5
+Review: Do I even have to explain?
+---
+Title: An Indigenous Peoples' History of the United States
+Author: Roxanne Dunbar-Ortiz
+Date finished: December 2nd, 2023
+Stars: 4.25
+Review: Even as someone raised in a progressive school district who tried to integrate Indigenous history and practives into its curriculums, this book made me realize still how colonial my education was regarding Indiginous Americans.
+---
+Title: Boyle Heights: How a Los Angeles Neighborhood Became the Future of American Democracy
+Author: George J Sanchez
+Date finished: December 6th, 2023
+Stars: 3.75 
+Review: An important read to help understand race from a historical perspective through the growth of Boyle heights.
+---
+Title: The Bhagavad Gita
+Author: Krishna-Dwaipayana Vyasa, Simon Brodbeck
+Date finished: December 8th, 2023
+Stars: 2.5
+Review: As someone reading not for religious value, but for moral guidance and other perspectives, it was okay as most of it was tied to gods. I am very much atheist, and so any value tied to worshiping a deity has no value to me.
+---
+Title: How to Be an Antiracist
+Author: Ibram X. Kendi
+Date finished: December 21st, 2023
+Stars: 5
+Review: Every page was worth reading, and every second was worth my time. It both teaches and reminds you in a nuanced and relevant way.
+---
+Title: Your Inner Fish: a Journey into the 3.5-Billion-Year History of the Human Body
+Author: Neil Shubin
+Date finished: January 4th, 2024
+Stars: 4.5
+Review: Original Review: Wonderful. For anyone interested in biology and natural history, it is an incredibly intriguing read.[2 years later]: This book was the first time I realized that I could be just as happy studying biological systems as i would in medicine. I attribute this book with being the catalyst for changing my course in life. Thanks Neil!
+---
+Title: The Will to Change: Men, Masculinity, and Love
+Author: bell hooks
+Date finished: January 24th, 2024
+Stars: 4.25
+Review: bell hooks puts such a complex issue into such simple and certain words. This is not just for men to read, but anyone who interacts with men. Actually, this book is for anyone who was raised under the patriarchy and wants to better understand how it shapes masculinity. 
+---
+Title: Naming Nature: The Clash Between Instinct and Science
+Author: Carol Kaesuk Yoon
+Date finished: Febuary 5th, 2024
+Stars: 4
+Review: The first 10 chapters are wonderful, excellent, brilliant. I loved every second of them. Only once the book was winding down into the conclusion did I find myself presented with a false dilemma between human instinct and science. Her understanding of why we are losing our “Umwelt” places sole blame on science, but I would venture to say it is a major product of a capitalist, colonialist, and power obsessed society. She did not set up to come to this conclusion, but I feel as though it is the correct one. She even mentions the idea that the absurd amount of brands are clogging out Umwelt and becoming our new thing we order, but then doesn’t condemn the system that brings us such things (capitalism. She talks about how we can’t help but categorize people based on race, it’s part of the Umwelt, but that completely ignores the terrible and scarring history of white supremacy. I would love to read this again, however I will be stopping after chapter 10.
+---
+Title: Otherlands
+Author: Thomas Halliday
+Date finished: March 22nd, 2024
+Stars: 4
+Review: Incredibly detailed, but also incredibly wordy. The author is incredibly descriptive to a fault sometimes. Other than the difficulty in reading it sometimes, the content was excellent, and I enjoyed every second of the book. If lavish verbosity is of no concern to you, this will be a 5 star read. 
+---
+Title: In Defense of Plants: An Exploration Into the Wonder of Plants
+Author: Matt Candeias
+Date finished: April 13th, 2024
+Stars: 4.5
+Review: A review in retrospect: I read this during my discovery phase of what path i wanted to travel in ecology. While I didn't end up on plants, this book opened my eyes and heart to the world of flora.
+---
+Title: Randomness in Evolution
+Author: John Tyler Bonner
+Date finished: May 4th, 2024
+Stars: 3
+Review: A good reminder that Evolutionary Panglossianism is still dogmatic (in the way it is taught in general culture). Many Evolutionary Biologists still fall for the trap as well, but as evolution is taught to the public from an adaptationists lens primarily.
+---
+Title: A Book of Luminous Things: An International Anthology of Poetry
+Author: Czesław Miłosz
+Date finished: May 14th, 2024
+Stars: 4
+Review: Aptly named anthology. I liked a lot more poems than I expected from an anthology. Po Chü-i my beloved.
+---
+Title: Nature Strange and Beautiful: How Living Beings Evolved and Made the Earth a Home
+Author: Egbert Giles Leigh, Christian Ziegler
+Date finished: July 6th, 2024
+Stars: 3
+Review: Very good introduction to life history and evolutionary biology, but for someone who is already pretty well versed, it was repetitive and boring. Not something I would recommend to a biologist, but to someone new to biology. 
+---
+Title: Far from Land: The Mysterious Lives of Seabirds
+Author: Michael Brooke
+Date finished: October 26th, 2024
+Stars: 3.5
+Review: I enjoyed this book and its exploration of what we know about seabirds and why. A good book for curious people.
+---
+Title: The Birds at My Table: Why We Feed Wild Birds and Why It Matters
+Author: Darryl Jones
+Date finished: December 4th, 2024
+Stars: 3.75
+Review: Solid read, especially if you are into bird feeding. It covers all aspects from the commercial, to the academic. I recommend this book to everyone I meet who has questions regarding bird feeding because its just that comprehensive. 
+---
+Title: Wild Souls: What We Owe Animals in a Changing World
+Author: Emma Marris
+Date finished: March 20th, 2025
+Stars: 4.25
+Review: This book was both one of the best I've read in a while, and one of the most frustrating I've read in a while. She would make great points for a couple of chapters, then drop an absolute stinker of a generalization regarding ecologists or ecological theory that would make me physically disengage with the book and close it to process what the fuck i just read. I recommend anyone curious about the ethics of conservation or zoos to read this, but please for the love of god (not that one, the other one) anytime she says ecologists think, say, or believe something, take it with a grain of salt.
+---
+Title: A Sand County Almanac
+Author: Aldo Leopold
+Date finished: October 11th, 2025
+Stars: 5
+Review: I am most definitely biased in my rating. This is a cornerstone piece of literature in the field of wildlife ecology, and it remains relevant even almost 80 years after it was first published. This is a book that everyone can enjoy, and everyone should enjoy. It is yet to be dated, and continues to be incredibly informative relevant. 
+---
+Title: IN PROGRESS: Foundation
+Author: Isaac Asimov
+Date finished: TBD
+Stars:
+Review:
