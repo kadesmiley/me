@@ -669,6 +669,15 @@ main {
 
 .hero .scene img { height: 100%; }
 
+/* <div class="hero bottom">: when the screen is wider than the picture and
+   some has to be cut off, cut it all from the TOP (the ceiling) instead of
+   half from the top and half from the bottom. Used on the living room. */
+.hero.bottom .scene {
+	top: auto;
+	bottom: 0;
+	transform: translateX(-50%);
+}
+
 /* in ?edit mode, keep the copy-this line on screen */
 .hero .scene-output {
 	position: fixed;
@@ -813,9 +822,86 @@ main {
 /* things the search hides — beats .box's own display */
 [hidden] { display: none !important; }
 
+/* ---------- ALBUM OF THE WEEK ----------
+   media-corner/album-of-the-week/ — js/albums.js builds all of this
+   from albums.txt. This week's album is one big box (cover on the
+   left, words on the right); older ones are a grid of small covers. */
+.album-featured {
+	display: flex;
+	gap: 1.5em;
+	align-items: flex-start;
+}
+
+/* the cover picture (or a blank square with a ♪) — always square */
+.album-art {
+	display: block;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	border: 1px solid var(--border);
+}
+
+.album-featured .album-art {
+	flex: 0 0 260px;
+	width: 260px;
+}
+
+.album-art-blank {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 3em;
+	color: var(--text-muted);
+	background: var(--bg);
+}
+
+.album-words { min-width: 0; }   /* lets long names wrap instead of overflowing */
+.album-words > :first-child { margin-top: 0; }
+.album-words h2 { margin: 0.1em 0 0.2em 0; font-size: 1.8em; }
+
+.album-label {
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+}
+
+.album-artist {
+	font-size: 1.15em;
+	color: var(--text-muted);
+	margin: 0 0 1em 0;
+}
+
+/* "Past Albums" sits right on the background picture, like the h1 */
+.album-history-title {
+	color: var(--overlay-text);
+	text-shadow: 0 0 4px var(--overlay-shadow), 0 1px 2px var(--overlay-shadow);
+	margin: 1.5em 0 0.6em 0;
+}
+
+/* the grid of older albums: as many columns as fit, each at least 150px */
+.album-history {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 1em;
+}
+
+.album-card {
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-top: 4px solid var(--accent-3);
+	padding: 0.6em;
+}
+
+.album-card .album-label { margin: 0.5em 0 0 0; font-size: 0.75em; }
+.album-card h3 { margin: 0.1em 0 0.15em 0; font-size: 1em; }
+.album-card .meta { margin: 0; }
+
 /* ---------- PHONES ----------
    Below 700px wide the sidebar becomes a bar across the top. */
 @media (max-width: 700px) {
+	/* Album of the Week: cover on top of the words instead of beside them */
+	.album-featured { flex-direction: column; }
+	.album-featured .album-art { flex: none; width: 100%; max-width: 320px; }
+
 	body { flex-direction: column; }
 
 	.sidebar {

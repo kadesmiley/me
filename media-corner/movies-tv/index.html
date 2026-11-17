@@ -10,8 +10,12 @@
 <body class="has-backdrop">
 
 	<!-- the in-game view of this spot, filling the screen behind the page (darkened).
-	     To change it, replace images/pages/reviews.webp. -->
-	<img class="page-backdrop" src="../../images/pages/reviews.webp" alt="" />
+	     It changes with the visitor's time of day, like the living room: the
+	     screenshots are in images/pages/reviews/ (06-00 sunrise, 08-00 day, 18-00 sunset, 20-00 night).
+	     js/daylight.js picks one when the page loads. To add or change a time,
+	     add/rename the file AND fix data-times below. -->
+	<img class="page-backdrop" src="../../images/pages/reviews/08-00.webp" data-daylight="../../images/pages/reviews/" data-times="06-00 08-00 18-00 20-00" alt="" />
+	<script src="../../js/daylight.js"></script>
 
 	<!-- ✕ Close / ☰ Menu button: the sidebar starts open here; js/menu.js hides/shows it. -->
 	<button class="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="true">✕ Close</button>
@@ -39,6 +43,7 @@
 						<li><a href="../../media-corner/movies-tv/" class="active">Movie &amp; TV Reviews</a></li>
 						<li><a href="../../media-corner/to-read/">To-Read Pile</a></li>
 						<li><a href="../../media-corner/to-watch/">To-Watch List</a></li>
+						<li><a href="../../media-corner/album-of-the-week/">Album of the Week</a></li>
 					</ul>
 				</details></li>
 				<li><details>

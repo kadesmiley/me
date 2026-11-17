@@ -10,8 +10,12 @@
 <body class="has-backdrop">
 
 	<!-- the in-game view of this spot, filling the screen behind the page (darkened).
-	     To change it, replace images/pages/notebook.webp. -->
-	<img class="page-backdrop" src="../../images/pages/notebook.webp" alt="" />
+	     It changes with the visitor's time of day, like the living room: the
+	     screenshots are in images/pages/notebook/ (06-00 day (6 AM – 8 PM), 20-00 night (8 PM – 6 AM)).
+	     js/daylight.js picks one when the page loads. To add or change a time,
+	     add/rename the file AND fix data-times below. -->
+	<img class="page-backdrop" src="../../images/pages/notebook/06-00.webp" data-daylight="../../images/pages/notebook/" data-times="06-00 20-00" alt="" />
+	<script src="../../js/daylight.js"></script>
 
 	<!-- ✕ Close / ☰ Menu button: the sidebar starts open here; js/menu.js hides/shows it. -->
 	<button class="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="true">✕ Close</button>
@@ -39,6 +43,7 @@
 						<li><a href="../../media-corner/movies-tv/">Movie &amp; TV Reviews</a></li>
 						<li><a href="../../media-corner/to-read/">To-Read Pile</a></li>
 						<li><a href="../../media-corner/to-watch/">To-Watch List</a></li>
+						<li><a href="../../media-corner/album-of-the-week/">Album of the Week</a></li>
 					</ul>
 				</details></li>
 				<li><details open>
@@ -81,9 +86,9 @@
 		-->
 
 		<div class="box">
-			<h3><a href="example-essay.pdf" target="_blank" rel="noopener">Example essay title</a></h3>
+			<h3><a href="example-essay.pdf" target="_blank" rel="noopener">Placeholder</a></h3>
 			<p class="meta">October 18, 2026 · PDF</p>
-			<p>A sentence or two about what the essay is about. (Placeholder: the link won't work until a real PDF is saved here.)</p>
+			<p>Coming soon!</p>
 		</div>
 	</main>
 

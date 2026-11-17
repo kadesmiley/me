@@ -39,6 +39,7 @@
 						<li><a href="../media-corner/movies-tv/">Movie &amp; TV Reviews</a></li>
 						<li><a href="../media-corner/to-read/">To-Read Pile</a></li>
 						<li><a href="../media-corner/to-watch/">To-Watch List</a></li>
+						<li><a href="../media-corner/album-of-the-week/">Album of the Week</a></li>
 					</ul>
 				</details></li>
 				<li><details>
@@ -65,8 +66,18 @@
 	<!-- ===== THE LIVING ROOM — fills the whole screen ===== -->
 	<!--
 		THE PICTURE + ITS CLICKABLE SPOTS
-		- The picture is images/scenes/living-room.webp. To swap it, replace
-		  that file (same name) or change the src below.
+		- The picture changes with the visitor's time of day (picked once when
+		  the page loads, by js/daylight.js). The 4 screenshots go in
+		  images/scenes/living-room/ and are named by the time they start:
+		      06-00.webp  sunrise   (6:00 AM – 8:00 AM)
+		      08-00.webp  day       (8:00 AM – 6:00 PM)
+		      18-00.webp  sunset    (6:00 PM – 8:00 PM)
+		      20-00.webp  night     (8:00 PM – 6:00 AM)
+		  To change when one starts, rename the file AND fix data-times below.
+		  Take all 4 from the exact same spot (F2, don't move the camera) or
+		  the clickable outlines won't line up.
+		- Until those files exist, it shows images/scenes/living-room.webp
+		  (the src below).
 		- Each <a class="hotspot highlight"> is one clickable thing. It has no
 		  visible text; it lights up see-through white when you point at it.
 		- Its --shape is the thing's outline: a list of corners, each one
@@ -78,33 +89,33 @@
 		  style font). It's placed automatically at the top-middle of the
 		  outline by js/nametags.js. aria-label is what screen readers say.
 	-->
-	<div class="hero">
+	<div class="hero bottom">  <!-- "bottom" = if the screen is too wide, crop the ceiling, not the floor -->
 		<div class="scene">
-			<img src="../images/scenes/living-room.webp" alt="Inside the cabin: a kitchen on the left, a coffee table in the middle, a desk and crafting table at the back, a stove on the left, and bookshelves on the right" />
+			<img src="../images/scenes/living-room.webp" data-daylight="../images/scenes/living-room/" data-times="06-00 08-00 18-00 20-00" alt="Inside the cabin: a kitchen on the left, a coffee table in the middle, a desk and crafting table at the back, a stove on the left, and bookshelves on the right" />
 
 			<!-- Coffee Table -->
-			<a class="hotspot highlight" href="../coffee-table/photo-album/" data-label="Photo Album" aria-label="Photo Album (the red book)" style="--shape: polygon(41.48% 67.72%, 41.19% 68.11%, 40.67% 67.32%, 40.30% 67.72%, 39.85% 67.06%, 39.48% 67.32%, 39.11% 66.67%, 38.96% 66.67%, 38.67% 67.06%, 38.00% 65.88%, 38.00% 65.22%, 38.15% 65.22%, 38.15% 64.56%, 38.30% 64.43%, 38.30% 63.90%, 38.44% 63.77%, 38.44% 63.24%, 38.59% 63.24%, 38.59% 62.58%, 38.74% 62.58%, 38.74% 61.92%, 40.22% 60.48%, 40.37% 60.48%, 40.67% 61.00%, 41.04% 60.74%, 41.41% 61.40%, 41.70% 61.13%, 41.78% 61.13%, 42.15% 61.53%, 42.22% 61.53%, 42.52% 61.40%, 42.96% 61.92%, 43.26% 61.66%, 44.00% 62.58%, 44.00% 63.11%, 43.93% 63.77%, 43.85% 63.90%, 43.85% 64.43%, 43.78% 64.56%, 43.78% 65.22%, 43.70% 65.22%, 43.63% 65.88%, 43.63% 66.53%, 43.33% 66.93%, 43.04% 66.53%, 43.04% 66.67%, 42.59% 67.06%, 42.67% 67.19%, 42.59% 67.72%, 42.00% 68.51%);"></a>
-			<a class="hotspot highlight" href="../coffee-table/life-logbook/" data-label="Life Logbook" aria-label="Life Logbook (the brown book)" style="--shape: polygon(51.63% 56.39%, 51.63% 57.05%, 50.96% 57.84%, 50.89% 57.84%, 50.67% 57.58%, 50.44% 57.84%, 50.22% 57.58%, 49.93% 57.84%, 49.70% 57.58%, 49.48% 57.84%, 49.26% 57.58%, 48.96% 57.84%, 48.74% 57.58%, 48.52% 57.84%, 48.44% 57.84%, 47.33% 56.53%, 47.33% 56.00%, 47.56% 55.74%, 47.56% 55.21%, 47.85% 55.08%, 47.85% 54.55%, 48.00% 54.42%, 48.07% 54.29%, 48.07% 53.89%, 48.22% 53.76%, 48.37% 53.63%, 48.37% 53.23%, 49.04% 52.57%, 49.11% 52.57%, 49.26% 52.71%, 49.41% 52.57%, 49.56% 52.57%, 49.70% 52.71%, 49.85% 52.57%, 50.00% 52.44%, 50.15% 52.71%, 50.30% 52.57%, 50.44% 52.57%, 50.59% 52.71%, 50.74% 52.57%, 50.96% 52.57%, 51.04% 52.71%, 51.19% 52.44%, 51.33% 52.44%, 51.48% 52.71%, 51.48% 53.10%, 51.63% 53.23%, 51.78% 53.36%, 51.93% 53.23%, 52.07% 53.23%, 52.22% 53.36%, 52.37% 53.50%, 52.44% 54.15%, 52.30% 54.29%, 52.30% 54.81%, 52.07% 54.94%, 52.07% 55.47%, 51.85% 55.74%, 51.85% 56.26%, 51.63% 56.39%, 51.63% 57.05%, 50.89% 57.84%);"></a>
+			<a class="hotspot highlight" href="../coffee-table/photo-album/" data-label="Photo Album" aria-label="Photo Album (the red book)" style="--shape: polygon(43.05% 72.22%, 43.75% 73.19%, 43.75% 73.61%, 43.67% 73.75%, 43.67% 74.58%, 43.59% 74.58%, 43.59% 75.14%, 43.44% 75.28%, 43.52% 75.56%, 43.52% 75.97%, 43.44% 75.97%, 43.44% 76.67%, 43.36% 76.81%, 43.28% 77.50%, 43.05% 77.78%, 42.97% 77.78%, 42.73% 77.50%, 42.27% 78.06%, 42.27% 78.19%, 42.27% 78.75%, 41.72% 79.44%, 41.48% 79.44%, 41.09% 78.75%, 41.02% 78.75%, 40.70% 79.17%, 40.63% 79.17%, 40.23% 78.33%, 39.92% 78.61%, 39.77% 78.61%, 39.38% 77.92%, 39.30% 77.92%, 38.98% 78.33%, 38.52% 77.50%, 38.20% 77.92%, 38.13% 77.92%, 37.50% 76.81%, 37.50% 76.67%, 37.50% 76.11%, 37.66% 75.97%, 37.66% 75.69%, 37.66% 75.28%, 37.73% 75.28%, 37.81% 75.14%, 37.81% 75.00%, 37.81% 74.58%, 37.97% 74.44%, 37.97% 74.31%, 37.97% 73.89%, 38.05% 73.89%, 38.05% 73.75%, 38.13% 73.75%, 38.13% 73.61%, 38.13% 73.19%, 38.28% 73.06%, 38.28% 72.50%, 39.92% 70.83%, 40.39% 71.53%, 40.63% 71.25%, 40.70% 71.25%, 41.09% 71.81%, 41.41% 71.53%, 41.95% 72.22%, 42.27% 71.81%, 42.66% 72.36%, 42.81% 72.36%, 42.97% 72.22%, 43.05% 72.22%, 43.67% 73.19%);"></a>
+			<a class="hotspot highlight" href="../coffee-table/life-logbook/" data-label="Life Logbook" aria-label="Life Logbook (the brown book)" style="--shape: polygon(48.36% 68.06%, 47.19% 66.81%, 47.19% 66.25%, 47.50% 65.83%, 47.50% 65.42%, 47.81% 65.14%, 47.81% 64.58%, 48.05% 64.44%, 48.05% 63.89%, 48.28% 63.75%, 48.28% 63.19%, 48.98% 62.64%, 49.22% 62.78%, 49.45% 62.50%, 49.61% 62.78%, 49.77% 62.78%, 49.84% 62.50%, 49.92% 62.50%, 50.08% 62.78%, 50.23% 62.78%, 50.31% 62.36%, 50.39% 62.50%, 50.55% 62.78%, 50.63% 62.78%, 50.78% 62.50%, 50.86% 62.50%, 51.02% 62.78%, 51.09% 62.78%, 51.25% 62.50%, 51.41% 62.64%, 51.48% 62.92%, 51.48% 63.19%, 51.72% 63.47%, 51.88% 63.33%, 52.03% 63.33%, 52.42% 63.75%, 52.50% 64.17%, 52.27% 65.00%, 52.11% 65.14%, 52.11% 65.69%, 51.88% 65.97%, 51.88% 66.53%, 51.64% 66.67%, 51.64% 67.36%, 51.02% 68.06%, 50.86% 68.06%, 50.70% 67.78%, 50.39% 68.06%, 50.23% 67.92%, 50.08% 67.92%, 49.92% 68.19%, 49.69% 67.92%, 49.61% 67.92%, 49.53% 68.06%, 49.30% 68.06%, 49.22% 67.92%, 49.14% 67.92%, 48.91% 68.06%, 48.75% 67.92%, 48.59% 67.92%, 48.36% 68.06%, 47.27% 66.81%);"></a>
 
 			<!-- Crafts Table -->
-			<a class="hotspot highlight" href="../crafts-table/notebook/" data-label="Notebook" aria-label="Notebook (the book on the desk)" style="--shape: polygon(45.63% 38.22%, 44.07% 38.22%, 43.85% 38.35%, 43.85% 38.62%, 43.63% 38.62%, 43.63% 38.75%, 43.11% 38.75%, 43.04% 38.88%, 43.04% 39.54%, 43.04% 39.54%, 42.96% 39.54%, 42.96% 39.93%, 44.00% 40.72%, 44.67% 40.72%, 45.41% 40.59%, 45.41% 40.46%, 45.63% 40.46%, 45.70% 40.33%, 46.15% 40.20%, 46.67% 40.06%, 46.67% 38.88%);"></a>
-			<a class="hotspot highlight" href="../crafts-table/projects/" data-label="Projects" aria-label="Projects (the crafting table)" style="--shape: polygon(50.81% 50.07%, 50.00% 49.28%, 49.85% 49.28%, 49.04% 50.07%, 45.78% 47.04%, 45.78% 45.46%, 49.93% 42.30%, 49.93% 40.06%, 45.48% 36.90%, 49.93% 34.27%, 54.44% 36.90%, 54.15% 46.91%);"></a>
+			<a class="hotspot highlight" href="../crafts-table/notebook/" data-label="Notebook" aria-label="Notebook (the book on the desk)" style="--shape: polygon(46.64% 48.89%, 46.48% 49.17%, 46.48% 49.44%, 46.25% 49.44%, 45.78% 50.42%, 45.47% 50.69%, 43.67% 50.69%, 43.05% 50.14%, 43.05% 49.72%, 43.20% 49.72%, 43.20% 49.17%, 43.28% 48.89%, 43.59% 48.61%, 43.83% 48.61%, 44.38% 48.19%, 46.02% 48.19%, 46.17% 48.33%, 46.17% 48.61%, 46.33% 48.47%, 46.48% 48.47%);"></a>
+			<a class="hotspot highlight" href="../crafts-table/projects/" data-label="Projects" aria-label="Projects (the crafting table)" style="--shape: polygon(49.92% 50.14%, 45.70% 47.08%, 50.08% 44.58%, 50.16% 44.58%, 54.30% 46.94%, 54.06% 56.81%, 50.86% 60.00%, 49.92% 59.17%, 49.84% 59.17%, 49.06% 60.00%, 48.98% 60.00%, 45.70% 56.94%, 45.63% 55.56%, 49.92% 52.36%);"></a>
 
 			<!-- Media Corner -->
-			<a class="hotspot highlight" href="../media-corner/reviews/" data-label="Reviews" aria-label="Reviews (the book on the reading table)" style="--shape: polygon(76.59% 53.76%, 76.81% 53.89%, 76.81% 54.29%, 76.96% 54.29%, 76.96% 54.42%, 77.11% 54.42%, 77.11% 54.81%, 77.33% 54.81%, 77.33% 55.21%, 77.56% 55.47%, 77.70% 55.47%, 77.70% 55.74%, 77.93% 56.00%, 77.85% 56.26%, 79.04% 56.92%, 79.19% 56.66%, 79.41% 56.92%, 79.85% 57.18%, 79.85% 57.58%, 80.30% 57.71%, 80.44% 57.18%, 80.81% 57.45%, 80.89% 57.18%, 81.63% 57.71%, 81.70% 57.71%, 81.78% 57.45%, 82.59% 57.97%, 82.67% 57.97%, 82.89% 57.18%, 83.11% 56.26%, 83.11% 56.13%, 82.89% 56.00%, 82.81% 55.87%, 82.81% 55.60%, 82.67% 55.60%, 82.59% 55.47%, 82.44% 55.47%, 82.44% 55.08%, 82.30% 55.08%, 82.15% 54.94%, 82.15% 54.68%, 82.07% 54.68%, 82.07% 54.55%, 81.93% 54.55%, 81.78% 54.15%, 81.48% 54.02%, 81.48% 53.76%, 81.48% 53.76%, 79.04% 52.18%, 78.44% 52.18%, 78.30% 52.57%, 78.00% 52.44%, 77.85% 52.57%, 77.26% 52.18%, 77.11% 52.31%, 76.67% 53.36%);"></a>
+			<a class="hotspot highlight" href="../media-corner/reviews/" data-label="Reviews" aria-label="Reviews (the book on the reading table)" style="--shape: polygon(77.50% 62.36%, 77.11% 63.47%, 77.11% 63.89%, 77.34% 64.03%, 77.34% 64.44%, 77.58% 64.44%, 77.58% 64.86%, 77.73% 65.00%, 77.89% 65.00%, 77.89% 65.28%, 78.05% 65.42%, 78.20% 65.56%, 78.20% 65.83%, 78.36% 65.97%, 78.52% 66.25%, 79.61% 67.08%, 79.84% 66.94%, 80.63% 67.36%, 80.63% 67.78%, 80.94% 67.92%, 81.09% 67.64%, 81.09% 67.50%, 81.33% 67.50%, 81.48% 67.64%, 81.64% 67.36%, 82.42% 67.92%, 82.50% 67.92%, 82.50% 67.64%, 83.36% 68.19%, 83.44% 68.19%, 83.59% 67.64%, 83.59% 67.08%, 83.67% 66.94%, 83.75% 66.81%, 83.75% 66.25%, 83.59% 66.25%, 83.44% 66.11%, 83.44% 65.83%, 83.05% 65.56%, 83.05% 65.28%, 82.73% 65.00%, 82.66% 64.72%, 82.34% 64.58%, 82.34% 64.31%, 81.95% 64.03%, 81.95% 63.75%, 80.78% 63.19%, 80.78% 63.33%, 80.39% 63.19%, 80.39% 62.78%, 79.30% 62.22%, 79.22% 62.36%, 78.75% 62.22%, 78.67% 62.64%, 78.28% 62.50%, 78.20% 62.64%, 77.50% 62.22%, 77.03% 63.47%);"></a>
 			<!-- not linked right now — the tall bookshelf, kept in case it gets a page:
 			     style="--shape: polygon(68.74% 29.92%, 64.37% 33.48%, 61.33% 61.66%, 67.11% 67.06%, 67.41% 65.22%, 70.00% 60.08%, 72.59% 62.19%, 73.19% 59.95%, 71.56% 58.63%, 72.15% 55.87%, 75.48% 49.15%, 78.81% 33.61%);" -->
-			<a class="hotspot highlight" href="../media-corner/to-read/" data-label="To-Read Pile" aria-label="To-Read Pile (the low shelf)" style="--shape: polygon(62.67% 49.28%, 61.41% 61.53%, 57.26% 57.71%, 57.33% 56.00%, 55.11% 54.02%, 55.56% 44.15%, 59.93% 40.06%, 60.07% 40.20%, 63.41% 42.17%);"></a>
-			<a class="hotspot highlight" href="../media-corner/to-watch/" data-label="To-Watch List" aria-label="To-Watch List (the wall shelf behind the reading table)" style="--shape: polygon(92.59% 38.48%, 86.74% 55.87%, 75.48% 49.15%, 78.81% 33.61%, 81.78% 34.66%, 81.19% 37.17%, 86.96% 39.41%, 87.70% 36.77%);"></a>
-			<!-- not linked right now — the dresser, kept in case it gets a page:
-			     style="--shape: polygon(67.45% 65.05%, 69.92% 61.34%, 83.98% 70.83%, 76.95% 92.82%, 65.10% 79.40%);" -->
+			<a class="hotspot highlight" href="../media-corner/to-read/" data-label="To-Read Pile" aria-label="To-Read Pile (the low shelf)" style="--shape: polygon(66.72% 54.03%, 62.81% 59.17%, 61.72% 72.08%, 57.42% 67.92%, 57.50% 66.11%, 55.16% 64.03%, 55.47% 54.03%, 59.22% 50.69%, 59.06% 54.03%, 61.72% 55.83%, 63.28% 54.03%, 63.36% 52.22%);"></a>
+			<a class="hotspot highlight" href="../media-corner/to-watch/" data-label="To-Watch List" aria-label="To-Watch List (the wall shelf behind the reading table)" style="--shape: polygon(75.63% 59.17%, 78.20% 43.75%, 81.09% 44.72%, 80.70% 47.22%, 86.56% 49.44%, 87.19% 46.81%, 91.95% 48.47%, 87.58% 65.97%);"></a>
+			<a class="hotspot highlight" href="../media-corner/album-of-the-week/" data-label="Album of the Week" aria-label="Album of the Week (the record on the jukebox)" style="--shape: polygon(69.45% 56.81%, 68.05% 56.81%, 67.97% 57.08%, 67.34% 57.08%, 67.34% 57.22%, 67.27% 57.22%, 67.27% 57.36%, 67.11% 57.36%, 67.11% 57.50%, 66.95% 57.64%, 66.95% 58.06%, 67.34% 59.03%, 67.66% 59.03%, 67.89% 59.31%, 68.05% 59.31%, 68.20% 59.58%, 69.06% 59.58%, 69.14% 59.72%, 70.70% 59.86%, 70.78% 59.58%, 71.41% 59.58%, 71.41% 59.31%, 71.56% 59.31%, 71.56% 59.03%, 71.72% 59.03%, 71.72% 58.47%, 71.25% 57.50%, 70.94% 57.50%, 70.78% 57.22%, 70.47% 57.22%, 70.39% 57.08%, 69.61% 57.08%, 69.45% 56.94%);"></a>
 
 			<!-- Kitchen -->
-			<a class="hotspot highlight" href="../kitchen/recipes/" data-label="Recipes" aria-label="Recipes (the stove)" style="--shape: polygon(32.74% 41.78%, 33.19% 42.30%, 33.70% 42.04%, 33.85% 42.04%, 37.93% 46.78%, 38.74% 55.08%, 38.52% 55.21%, 38.96% 59.29%, 32.37% 65.22%, 32.37% 65.48%, 32.96% 69.04%, 32.96% 69.17%, 31.11% 71.01%, 30.37% 69.30%, 29.11% 63.11%, 27.85% 64.16%, 27.78% 64.16%, 25.85% 55.21%, 22.67% 48.36%, 23.93% 47.57%, 23.78% 47.04%, 23.78% 46.52%);--shape: polygon(32.74% 41.78%, 33.26% 42.30%, 33.70% 42.04%, 33.85% 42.04%, 37.93% 46.78%, 38.81% 55.08%, 38.52% 55.21%, 38.52% 54.81%, 38.44% 54.81%, 38.37% 53.76%, 38.30% 52.84%, 38.07% 50.47%, 37.19% 49.28%, 37.11% 49.28%, 27.78% 56.00%, 27.70% 56.13%, 29.11% 63.11%, 27.85% 64.16%, 26.15% 56.53%, 23.04% 50.07%, 22.67% 48.36%, 23.93% 47.57%, 23.78% 46.78%, 23.78% 46.65%);"></a>
+			<a class="hotspot highlight" href="../kitchen/recipes/" data-label="Recipes" aria-label="Recipes (the stove)" style="--shape: polygon(33.83% 51.94%, 37.89% 56.81%, 38.52% 65.28%, 38.28% 65.42%, 37.89% 60.42%, 36.95% 59.31%, 27.19% 66.25%, 28.36% 73.75%, 26.95% 74.86%, 25.70% 67.22%, 25.31% 66.25%, 22.73% 60.14%, 22.42% 58.33%, 23.75% 57.64%, 23.59% 56.67%, 32.73% 51.67%, 33.28% 52.36%);"></a>
 		</div>
 	</div>
 
 	<script src="../js/theme.js"></script>
+	<script src="../js/daylight.js"></script>  <!-- picks the sunrise/day/sunset/night picture -->
 	<script src="../js/nametags.js"></script>
 	<script src="../js/scene.js"></script>
 </body>

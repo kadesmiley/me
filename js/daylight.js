@@ -11,6 +11,10 @@
 //
 // TO ADD A SCREENSHOT: save it as images/scenes/outside/HH-MM.webp and
 // add HH-MM to data-times in index.html (any order is fine).
+//
+// The living room uses this too (sunrise / day / sunset / night, in
+// images/scenes/living-room/). If a screenshot is missing, the picture
+// just stays on whatever its src already was.
 (function () {
 	var img = document.querySelector("img[data-daylight]");
 	if (!img) return;
@@ -28,5 +32,8 @@
 		if (times[i] <= nowText) pick = times[i];
 	}
 
+	// if that file doesn't exist (yet), go back to the original picture
+	var original = img.src;
+	img.onerror = function () { img.onerror = null; img.src = original; };
 	img.src = folder + pick + ".webp";
 })();

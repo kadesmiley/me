@@ -1,0 +1,39 @@
+# ============================================================
+#  ALBUM OF THE WEEK — the Album of the Week page reads this file.
+#
+#  TO ADD THIS WEEK'S ALBUM: copy the template below, paste it at
+#  the very BOTTOM of this file, remove the # at the start of each
+#  line, and fill it in. Put a line with just --- between albums.
+#  The bottom one is the current Album of the Week; all the ones
+#  above it show under "Past Albums", newest first.
+#  The week number counts itself: the first album in this file is
+#  Week 1, the next is Week 2, and so on. Don't delete old entries
+#  or the numbers will shift.
+#
+#  Album:     the album's name
+#  Artist:    who made it
+#  Week:   written however you like (e.g. Nov 17, 2026)
+#  Art:       the cover picture's file name. Put the picture in the
+#             art/ folder next to this file (e.g. art/my-album.jpg)
+#             and write just the name here: my-album.jpg
+#             Leave it blank if you don't have one.
+#  Notes:     optional — why you picked it, favorite songs, anything.
+#             It can go on for as many lines as you want. A blank
+#             line starts a new paragraph.
+#
+#  Lines starting with # are notes like this one — the site ignores them.
+#
+#  ---- TEMPLATE (copy from here) ----
+#  ---
+#  Album:
+#  Artist:
+#  Week:
+#  Art:
+#  Notes:
+# ============================================================
+---
+Album: Charm
+Artist: Clairo
+Week of: Nov 16, 2026
+Art: Charm.jpg
+Notes: 
